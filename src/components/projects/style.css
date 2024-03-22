@@ -1,0 +1,84 @@
+.github{
+    max-height: 700px;
+    max-width: 1000px;
+    overflow-y: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1e2126;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+
+.github div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 180px;
+    max-height: 180px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    background-color: #282c34;
+}
+
+.github div span {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.github .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    max-width: 900px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 1000px;
+    background-color: #1e2126;
+}
+
+.github button {
+    column-gap: 10px;
+    background-color: #1e2126;
+    width: fit-content;
+
+}
+
+.github button:hover {
+    background-color: #282c34;
+    outline: 1px solid #0ad4ef;
+}
+
+.github .projects p {
+    width: fit-content;
+    min-height: 30px;
+    max-height: 30px;
+    text-shadow: 0 0 2px #333;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #282c34;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1e2126;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #797979
+}

@@ -1,0 +1,33 @@
+.contact div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 10px;
+
+}
+
+.contact button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1e2126;
+    width: 190px;
+    column-gap: 20px;
+    cursor: pointer;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: bold;
+    max-height: 40px;
+}
+
+.contact button img {
+    background-color: transparent;
+}
+
+/*.contact button:hover {*/
+/*    background-color: #282c34;*/
+/*    transition: 0.3s;*/
+/*    outline: 1px solid #0ad4ef;*/
+/*}*/
