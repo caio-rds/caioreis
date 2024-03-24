@@ -110,3 +110,9 @@
     background-color: #282c34;
     padding: 10px;
 }
+
+@media (max-width: 1366px) {
+    .about .photoInfo span div labelcontent {
+        font-size: 14px;
+    }
+}

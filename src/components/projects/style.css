@@ -82,3 +82,84 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: #797979
 }
+
+@media (max-width: 1366px) {
+    .github {
+        max-height: 475px;
+    }
+
+    .github .projects div {
+        min-width: 320px;
+        max-width: 320px;
+        min-height: 175px;
+        max-height: 175px;
+        padding: 5px;
+    }
+
+    .github .projects div button {
+        margin-top: 0;
+    }
+
+    .github .projects p {
+        font-size: 8px;
+    }
+
+    .github .projects span {
+        row-gap: 5px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .github {
+        max-height: 250px;
+    }
+
+    .github .projects div {
+        min-width: 250px;
+        max-width: 250px;
+        min-height: 150px;
+        max-height: 150px;
+        padding: 5px;
+    }
+
+    .github .projects div button {
+        margin-top: 0;
+    }
+
+    .github .projects p {
+        font-size: 8px;
+    }
+
+    .github .projects span {
+        row-gap: 5px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .github {
+        max-height: 200px;
+    }
+
+    .github .projects div {
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 125px;
+        max-height: 125px;
+        padding: 5px;
+    }
+
+    .github .projects div button {
+        margin-top: 0;
+    }
+
+    .github .projects p {
+        font-size: 8px;
+    }
+
+    .github .projects span {
+        row-gap: 5px;
+        padding: 5px;
+    }
+}
