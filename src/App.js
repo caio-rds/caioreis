@@ -3,7 +3,7 @@ import TopBar from "./components/topbar";
 import {useEffect, useState} from "react";
 import About from "./components/about";
 import Home from "./components/home";
-import Experience from "./components/experience";
+import Projects from "./components/projects";
 import Contact from "./components/contact";
 
 
@@ -14,7 +14,7 @@ function App() {
     const mapArea = {
         home: <Home language={language}/>,
         about: <About language={language}/>,
-        experience: <Experience language={language}/>,
+        projects: <Projects language={language}/>,
         contact: <Contact language={language}/>
     }
 

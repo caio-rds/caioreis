@@ -1,4 +1,10 @@
 import './style.css'
+import linkedin from '../../assets/linkedin.png'
+import twitch from '../../assets/twitch.png'
+import github from '../../assets/github.png'
+import youtube from '../../assets/youtube.png'
+import discord from '../../assets/discord.png'
+import mail from '../../assets/mail.png'
 
 export default function Contact({language}) {
     const legend = {
@@ -14,25 +20,25 @@ export default function Contact({language}) {
     }
     const socials = {
         linkedin: {
-            icon: './linkedin.png',
+            icon: linkedin,
             label: 'LinkedIn',
             handlerClick: () => window.open('https://www.linkedin.com/in/caio-reis-04224a20a/', '_blank'),
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(13, 85, 209,1)'
         },
         twitch: {
-            icon: './twitch.png',
+            icon: twitch,
             label: 'Twitch',
             handlerClick: () => window.open('https://www.twitch.tv/caiords_', '_blank'),
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(128, 5, 242,1)'
         },
         github: {
-            icon: './github.png',
+            icon: github,
             label: 'GitHub',
             handlerClick: () => window.open('https://www.github.com/caio-rds', '_blank'),
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(18, 18, 18,1)'
         },
         youtube: {
-            icon: './youtube.png',
+            icon: youtube,
             label: 'YouTube',
             handlerClick: () => window.open(
                 'https://www.youtube.com/channel/UCShB4T_s3x20-ZVrZEdO5fw',
@@ -41,13 +47,13 @@ export default function Contact({language}) {
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(230, 7, 7,1)'
         },
         discord: {
-            icon: './discord.png',
+            icon: discord,
             label: 'Discord',
             handlerClick: () => window.navigator.clipboard.writeText('caiords'),
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(34, 117, 212,1)'
         },
         email: {
-            icon: './mail.png',
+            icon: mail,
             label: 'Email',
             handlerClick: () => window.open('mailto:caiodtn@gmail.com'),
             mouseIn: (e) => e.target.style.backgroundColor = 'rgba(16, 201, 115,1)'

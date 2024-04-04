@@ -1,3 +1,14 @@
+.mainDisplayAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    row-gap: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .displayAbout {
     display: flex;
     align-items: center;
@@ -11,13 +22,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 450px;
+    height: 400px;
     max-width: 500px;
     min-width: 500px;
-    background-color: #1e2126;
+
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);
+    /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);*/
+    row-gap: 20px;
 }
 
 .about h4 {
@@ -25,62 +37,42 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-    background-color: #282c34;
+    background-color: #1e2126;
     padding:10px;
-    width: 100%;
+    width: 40%;
+    height: 80%;
     border-radius: 10px;
+    font-weight: normal;
 }
-
-
 
 .about .photoInfo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    column-gap: 20px;
-    width: 100%;
+    column-gap: 10px;
+    width: fit-content;
     border-radius: 10px;
-    outline: 8px solid #282c34;
-    background-color: #282c34;
+    /*background-color: #282c34;*/
+
 }
 
 .about .photoInfo img {
     border-radius: 8px;
+    background-color: #1e2126;
 }
 
 .about .photoInfo span {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
-    row-gap: 10px;
-    padding:10px;
+    padding: 5px 10px 15px 10px;
     border-radius: 10px;
-    width: 98%;
-}
-
-.about .photoInfo span inline {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    column-gap: 30px;
-    padding: 3px;
-    min-width: 70px;
-    border-radius: 5px;
+    min-width: 200px;
 }
 
 
-.about .photoInfo span div {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.about .photoInfo span div labelTitle {
+.about .photoInfo span labelTitle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,29 +82,36 @@
     padding: 5px;
     border-radius: 8px 8px 0 0;
     min-width: 40px;
+    font-weight: bold;
 }
 
-.about .photoInfo span div labelContent{
+.about .photoInfo span  labelContent{
     /*background-color: #1e2126;*/
-    background-color: #282c34;
+    background-color: #1e2126;
     outline: 3px solid #1e2126;
     padding: 10px;
-    min-width: 80px;
+    min-width: 190px;
+    max-width: 690px;
     border-radius: 0 8px 8px 8px;
     font-size: 16px;
+    min-height: 166px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.about .photoInfo span div inlineContent {
+.about .photoInfo span  inlineContent {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 10px;
-    background-color: #282c34;
     padding: 10px;
+    font-weight: bold;
 }
 
 @media (max-width: 1366px) {
-    .about .photoInfo span div labelcontent {
+    .about .photoInfo span  labelcontent {
         font-size: 14px;
     }
 }

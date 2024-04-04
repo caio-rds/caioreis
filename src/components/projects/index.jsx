@@ -1,7 +1,8 @@
 import './style.css'
 import {useEffect, useState} from "react";
+import github from '../../assets/github.png'
 
-export default function Projects({language, show, setDisplay}) {
+export default function Projects({language}) {
     const legend = {
         title: {
             'en-US': "Projects",
@@ -46,11 +47,7 @@ export default function Projects({language, show, setDisplay}) {
 
 
     return (
-        <div className="github" style={{display: show ? "flex" : "none"}}>
-            <i
-                style={{position: 'absolute', right: '20px', top: '20px'}}
-                className="fas fa-times" onClick={() => setDisplay(false)}
-            />
+        <div className="github">
             <h1>{legend.title[language]}</h1>
             <p>{legend.description[language]}</p>
             <div className={"projects"}>
@@ -64,7 +61,7 @@ export default function Projects({language, show, setDisplay}) {
                             </span>
                                 <p style={{fontSize: '14px'}}>{project.description}</p>
                                 <button onClick={() => window.open(project.svn_url, '_blank')}>
-                                    <img src="./github.png" alt="GitHub" width={25}/>
+                                    <img src={github} alt="GitHub" width={25}/>
                                     {legend.see_project[language]}
                                 </button>
                             </div>

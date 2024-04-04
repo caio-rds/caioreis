@@ -1,5 +1,12 @@
 import './style.css'
 import Hobbies from "../hobbies";
+import me from '../../assets/me.png'
+import state from '../../assets/state.png'
+import country from '../../assets/country.png'
+import name from '../../assets/name.png'
+import age from '../../assets/age.png'
+import Experience from "../experience";
+
 
 const birthdate = () => {
     return Math.floor(
@@ -11,20 +18,20 @@ const birthdate = () => {
 
 const personal_infos = {
     name: {
-        'en-US': { label: 'Name', value: 'Caio Reis' },
-        'pt-BR': { label: 'Nome', value: 'Caio Reis' }
+        'en-US': { icon: name, value: 'Caio Reis' },
+        'pt-BR': { icon: name, value: 'Caio Reis' }
     },
     birthdate: {
-        'en-US': { label: 'Age', value: birthdate() + ' years'},
-        'pt-BR': { label: 'Idade', value: birthdate() + ' anos'}
+        'en-US': { icon: age, value: birthdate() + ' years'},
+        'pt-BR': { icon: age, value: birthdate() + ' anos'}
     },
     location: {
-        'en-US': { label: 'Localization', value: 'Rio de Janeiro, RJ' },
-        'pt-BR': { label: 'Localização', value: 'Rio de Janeiro, RJ'}
+        'en-US': { icon: state, value: 'Rio de Janeiro, RJ' },
+        'pt-BR': { icon: state, value: 'Rio de Janeiro, RJ'}
     },
     country: {
-        'en-US': { label: 'Country', value: 'Brazil'},
-        'pt-BR': { label: 'País', value: 'Brasil'}
+        'en-US': { icon: country, value: 'Brazil'},
+        'pt-BR': { icon: country, value: 'Brasil'}
     }
 }
 
@@ -43,7 +50,9 @@ const legend = {
     },
     letter: {
         'en-US': `Hello, I'm Caio Reis, a full stack developer, passionate about technology and programming. I'm always looking for new challenges and learning new things. I'm currently working with React, Node.js, and MongoDB. I'm also a fan of Linux and open source.`,
-        'pt-BR': `Olá, eu sou Caio Reis, um desenvolvedor full stack, apaixonado por tecnologia e programação. Estou sempre em busca de novos desafios e aprendendo coisas novas. Atualmente estou trabalhando com React, Node.js e MongoDB. Também sou fã de Linux e open source.`
+        'pt-BR': `Olá, eu sou Caio Reis, um desenvolvedor (quase) full stack, apaixonado por tecnologia e programação.
+         Estou sempre em busca de novos desafios e aprendendo coisas novas.
+         Meu foco atual é em React, Node.js e MongoDB. Também sou um entusiasta de Linux e software livre.`
     }
 }
 
@@ -51,39 +60,33 @@ export default function About({language}) {
 
     return (
         <div className={"displayAbout"}>
-            <div className="about">
-                <h1>{legend.subtitle[language]}</h1>
+            <div className="about" style={{maxWidth: "46%", height: "61.5%"}}>
                 <div className={"photoInfo"}>
-                    <img src={'./me.png'} alt={'profile'} width={230} height={230}/>
+                    <img src={me} alt={'profile'} width={210} height={220}/>
                     <span>
-                        <inline>
-                            <div>
-                                <labelTitle>{personal_infos.name[language].label}:</labelTitle>
-                                <labelContent>{personal_infos.name[language].value}</labelContent>
-                            </div>
-                            <div>
-                                <labelTitle>{personal_infos.birthdate[language].label}:</labelTitle>
-                                <labelContent>{personal_infos.birthdate[language].value}</labelContent>
-                            </div>
-                        </inline>
-                        <div>
-                            <labelTitle>{personal_infos.location[language].label}:</labelTitle>
-                            <labelContent style={{width: '97%'}}>
-                                <div>
-                                    <inlineContent>
-                                        <img src={'./state.png'} width={20} alt={'Location'}/>
-                                        {personal_infos.location[language].value}
-                                    </inlineContent>
-                                    <inlineContent>
-                                        <img src={'./country.png'} width={20} alt={'Country'}/>
-                                        {personal_infos.country[language].value}
-                                    </inlineContent>
-                                </div>
-                            </labelContent>
-                        </div>
+                        <labelTitle>{legend.subtitle[language]}:</labelTitle>
+                        <labelContent>
+                                {
+                                    Object.keys(personal_infos).map((key) => {
+                                        return (
+                                            <inlineContent key={key}>
+                                                <img src={personal_infos[key][language].icon} width={20} alt={key}/>
+                                                {personal_infos[key][language].value}
+                                            </inlineContent>
+                                        )
+                                    })
+                                }
+                        </labelContent>
+                    </span>
+                    <span>
+                        <labelTitle>{legend.title[language]}:</labelTitle>
+                        <labelContent style={{textAlign: "justify", height: "164px"}}>
+                            {legend.letter[language]}
+                        </labelContent>
                     </span>
                 </div>
-                <h4>{legend.letter[language]}</h4>
+
+                <Experience language={language}/>
             </div>
             <div className="about">
                 <Hobbies language={language}/>

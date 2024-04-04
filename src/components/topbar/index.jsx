@@ -5,7 +5,7 @@ export default function TopBar({newArea, setLanguage, language, area}) {
     const buttons = {
         home: {'en-US': 'Home', 'pt-BR': 'Início'},
         about: {'en-US': 'About', 'pt-BR': 'Sobre'},
-        experience: {'en-US': 'Experience', 'pt-BR': 'Experiência'},
+        projects: {'en-US': 'Projects', 'pt-BR': 'Projetos'},
         contact: {'en-US': 'Contact', 'pt-BR': 'Contato'}
     }
     const langs = {
