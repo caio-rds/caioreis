@@ -11,12 +11,6 @@ import Contact from "./components/contact";
 function App() {
     const [area, setArea] = useState('home')
     const [language, setLanguage] = useState(localStorage.getItem('language') || 'en-US')
-    const mapArea = {
-        home: <Home language={language}/>,
-        about: <About language={language}/>,
-        projects: <Projects language={language}/>,
-        contact: <Contact language={language}/>
-    }
 
     useEffect(() => {
         if (localStorage.getItem('area')) {
@@ -31,6 +25,13 @@ function App() {
 
     const languageHandler = (lang) => {
         setLanguage(lang)
+    }
+
+    const mapArea = {
+        home: <Home language={language} setArea={areaHandler}/>,
+        about: <About language={language}/>,
+        projects: <Projects language={language}/>,
+        contact: <Contact language={language}/>
     }
 
     return (

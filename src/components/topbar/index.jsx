@@ -26,7 +26,11 @@ export default function TopBar({newArea, setLanguage, language, area}) {
                 {Object.keys(buttons).map((button, index) => (
                     <button key={index} value={button}
                             onClick={() => newArea(button)}
-                            style={{background: area === button ? '#1e2126' : ''}}
+                            style={{
+                                background: area === button ? '#1e2126' : '',
+                                fontWeight: area === button ? 'bold' : '',
+                                boxShadow: area === button ? '5px 5px 10px rgba(0, 0, 0, 0.5)' : ''
+                            }}
                     >
                         {buttons[button][language]}
                     </button>

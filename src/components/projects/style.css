@@ -1,71 +1,47 @@
-.github{
-    max-height: 700px;
-    max-width: 1000px;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #1e2126;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: absolute;
-}
-
-.github div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    column-gap: 20px;
-    min-width: 400px;
-    max-width: 400px;
-    min-height: 180px;
-    max-height: 180px;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: hidden;
-    background-color: #282c34;
-}
-
-.github div span {
-    display:flex;
-    justify-content: center;
-    flex-direction: row;
-    column-gap: 20px;
-}
-
-.github .projects {
+.projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 10px;
     column-gap: 10px;
-    max-width: 900px;
-    padding: 10px;
+    min-width: 50%;
+    /*background: red;*/
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 1000px;
-    background-color: #1e2126;
 }
 
-.github button {
+.projects div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e2126;
+    border-radius: 8px;
+    max-width: 400px;
+    padding-bottom: 20px;
+}
+
+.projects div span {
+    display: flex;
     column-gap: 10px;
-    background-color: #1e2126;
+}
+
+
+.projects button {
+    column-gap: 10px;
     width: fit-content;
-
 }
 
-.github button:hover {
-    background-color: #282c34;
-    outline: 1px solid #0ad4ef;
+.projects button:hover {
+    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
 }
 
-.github .projects p {
+.projects p {
     width: fit-content;
     min-height: 30px;
     max-height: 30px;
     text-shadow: 0 0 2px #333;
+    padding: 0 10px 0 10px;
 }
 
 ::-webkit-scrollbar {
@@ -84,29 +60,8 @@
 }
 
 @media (max-width: 1366px) {
-    .github {
-        max-height: 475px;
-    }
-
-    .github .projects div {
-        min-width: 320px;
-        max-width: 320px;
-        min-height: 175px;
-        max-height: 175px;
-        padding: 5px;
-    }
-
-    .github .projects div button {
-        margin-top: 0;
-    }
-
-    .github .projects p {
-        font-size: 8px;
-    }
-
-    .github .projects span {
-        row-gap: 5px;
-        padding: 5px;
+    .projects {
+        padding: 30px 100px 0 100px;
     }
 }
 

@@ -1,0 +1,37 @@
+.letter {
+    display: flex;
+    flex-direction: column;
+    width:1075px;
+}
+
+.letter label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background-color: #1e2126;
+    border-radius: 8px 8px 0 0;
+    min-width: 40px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+}
+
+.letter content {
+    padding: 10px;
+    background-color: #1e2126;
+    border-radius: 0 8px 8px 8px;
+    width: 1055px;
+}
+
+
+@media (max-width: 1366px) {
+    .letter {
+        width: 945px;
+    }
+
+    .letter content {
+        width: 925px;
+        height: 80px;
+    }
+}

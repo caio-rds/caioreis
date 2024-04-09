@@ -2,7 +2,7 @@ import './style.css'
 import Lottie from "react-lottie"
 import animationData from "../../animations/anim.json"
 
-export default function Home({language}) {
+export default function Home({language, setArea}) {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -12,23 +12,63 @@ export default function Home({language}) {
         }
     }
 
+    const react_url = "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
 
     const legend = {
-        first : {
-            'en-US': 'Welcome to the home page of this simple app.',
-            'pt-BR': 'Bem-vindo à página inicial deste simples site.'
+        explain: {
+            'en-US': `The idea of this site is pretty simple, introduce myself and my work.`,
+            'pt-BR': 'A ideia deste site é bem simples, me apresentar e apresentar meu trabalho.'
         },
-        second: {
-            'en-US': 'The idea of this site is pretty simple, introduce myself and my work. (including this site)',
-            'pt-BR': 'A ideia deste site é bem simples, me apresentar e apresentar meu trabalho. (incluindo esse site)'
+        hi: {
+            'en-US': 'Hi, my name is',
+            'pt-BR': 'Olá, meu nome é'
+        },
+        about: {
+            'en-US': 'See more about me',
+            'pt-BR': 'Veja mais sobre mim'
+        },
+        download: {
+            'en-US': "Download my CV",
+            'pt-BR': "Baixe meu currículo"
+        },
+        comment: {
+            'en-US': "This site is made with react, you can see the code on my github.",
+            'pt-BR': "Este site é feito com react, você pode ver o código no meu github."
+        },
+        role: {
+            'en-US': 'Developer & Software Engineer',
+            'pt-BR': 'Desenvolvedor & Engenheiro de Software'
 
         }
     }
     return (
         <div className="home">
-            <h2>{legend.first[language]}</h2>
+            <div>
+                <span>
+                    {legend.hi[language]}
+                    <name>Caio Reis</name>
+                    <role>{legend.role[language]}</role>
+                </span>
+                <h3>{legend.explain[language]}</h3>
+                <explainer>
+                    <img src={react_url} alt="React" width={50}/>
+                    {legend.comment[language]}
+                </explainer>
+                <buttons>
+                    <button onClick={() => setArea('about')}>
+                        <i className="fas fa-user"></i>
+                        {legend.about[language]}
+                    </button>
+                    <a href={"./cv.pdf"} download>
+                        <button>
+                            <i className="fas fa-download"></i>
+                            {legend.download[language]}
+                        </button>
+                    </a>
+                </buttons>
+            </div>
             <Lottie options={defaultOptions} height={400} width={400} isPaused={false} isStopped={false}/>
-            <h3>{legend.second[language]}</h3>
+
         </div>
     )
 }

@@ -4,14 +4,6 @@ import github from '../../assets/github.png'
 
 export default function Projects({language}) {
     const legend = {
-        title: {
-            'en-US': "Projects",
-            'pt-BR': "Projetos"
-        },
-        description: {
-            'en-US': "Here are some of my projects",
-            'pt-BR': "Aqui estão alguns dos meus projetos"
-        },
         see_project: {
             'en-US': "See project in GitHub",
             'pt-BR': "Ver projeto no GitHub"
@@ -47,28 +39,24 @@ export default function Projects({language}) {
 
 
     return (
-        <div className="github">
-            <h1>{legend.title[language]}</h1>
-            <p>{legend.description[language]}</p>
-            <div className={"projects"}>
-                {
-                    projects.map((project, index) => {
-                        return (
-                            <div key={index}>
+        <div className={"projects"}>
+            {
+                projects.map((project, index) => {
+                    return (
+                        <div key={index}>
                             <span>
                                 <h3>{project.name}</h3>
                                 <img src={project.icon} alt={project.language} width={25}/>
                             </span>
-                                <p style={{fontSize: '14px'}}>{project.description}</p>
-                                <button onClick={() => window.open(project.svn_url, '_blank')}>
-                                    <img src={github} alt="GitHub" width={25}/>
-                                    {legend.see_project[language]}
-                                </button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+                            <p style={{fontSize: '14px'}}>{project.description}</p>
+                            <button onClick={() => window.open(project.svn_url, '_blank')}>
+                                <img src={github} alt="GitHub" width={25}/>
+                                {legend.see_project[language]}
+                            </button>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }

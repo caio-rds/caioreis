@@ -15,18 +15,8 @@
     position:fixed;
 }
 
-button {
-    background-color: #282c34;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.buttons button:hover {
+    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139))
 }
 
 .language {
@@ -49,18 +39,16 @@ button {
 }
 
 .language button:last-child {
-
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-
 .language .active {
-    background-color: #0df54e;
+    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
     font-weight: bold;
     border: 5px solid #282c34;
     height: 40px;
     width: 60px;
     border-radius: 8px;
-    color: #1e2126;
+    color: #ececec;
 }
