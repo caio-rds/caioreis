@@ -24,4 +24,8 @@ yarn-error.log*
 
 .idea/*
 
-.idea
+.idea/caioreis.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/.gitignore
+.idea/nubetter.iml
