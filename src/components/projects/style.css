@@ -8,6 +8,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 1000px;
+    padding-bottom: 10px;
 }
 
 .projects div {
@@ -19,6 +20,7 @@
     border-radius: 8px;
     max-width: 400px;
     padding-bottom: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .projects div span {
