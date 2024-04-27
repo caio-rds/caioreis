@@ -5,83 +5,48 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.home div {
-    justify-content: center;
-    align-items: center;
-    display: flex;
     flex-direction: column;
-    row-gap: 20px;
-}
-
-.home div span {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.home div span name{
-    font: 700 38px 'Roboto', sans-serif;
-    letter-spacing: 2px;
-    width: 100%;
-    background: -webkit-linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.home div span role {
-    font: 400 12px 'Roboto', sans-serif;
-    width: 100%;
-    color: rgba(204, 204, 204, 0.57);
-}
-
-.home div h3 {
-    font: 700 18px 'Roboto', sans-serif;
-    margin: 0;
-    width: 500px;
-    padding: 10px;
-}
-
-.home div button {
-    width: 200px;
-    background-color: #1e2126;
-}
-
-.home div button:hover {
-    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139))
-}
-
-.home div buttons {
-    display: flex;
     column-gap: 10px;
 }
 
-.home buttons a {
+.home span {
+    display: flex;
+    column-gap: 5px;
+}
+
+
+.home a {
     color: #0ad4ef;
     text-decoration: none;
-}
-
-.home buttons button {
-    background-color: #1e2126;
-    width: 190px;
-    column-gap: 15px;
-    min-height: 40px;
-    max-height: 40px;
-    justify-content: space-around;
-}
-
-.home explainer {
     display: flex;
+    padding-top: 10px;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    row-gap: 20px;
-    font-weight: 600;
-    width: fit-content;
-    padding: 10px;
+}
+
+.home a button {
+    background-color: #1e2126;
+    width: 200px;
+    column-gap: 15px;
+    min-height: 50px;
+    max-height: 50px;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.home a button:hover {
+    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);
+}
+
+.home h1 {
+    font-size: 38px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.76);
+}
+
+@media (max-width: 1366px) {
+    .home h1 {
+        font-size: 30px;
+    }
 }

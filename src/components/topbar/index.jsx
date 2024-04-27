@@ -4,7 +4,7 @@ import './style.css'
 export default function TopBar({newArea, setLanguage, language, area}) {
     const buttons = {
         home: {'en-US': 'Home', 'pt-BR': 'Início'},
-        about: {'en-US': 'About', 'pt-BR': 'Sobre'},
+        // about: {'en-US': 'About', 'pt-BR': 'Sobre'},
         projects: {'en-US': 'Projects', 'pt-BR': 'Projetos'},
         contact: {'en-US': 'Contact', 'pt-BR': 'Contato'}
     }
@@ -19,9 +19,21 @@ export default function TopBar({newArea, setLanguage, language, area}) {
         setLanguage(e.target.value)
     }
 
+    const role = {
+        'en-US': 'Developer & Software Engineer',
+        'pt-BR': 'Desenvolvedor & Engenheiro de Software'
+    }
 
     return (
         <div className="topbar">
+            <span>
+                <div>
+                    <besideName>&lt;</besideName>
+                    <name> Caio Reis </name>
+                    <besideName>/&gt;</besideName>
+                </div>
+                <role>{role[language]}</role>
+            </span>
             <div className={"buttons"}>
                 {Object.keys(buttons).map((button, index) => (
                     <button key={index} value={button}

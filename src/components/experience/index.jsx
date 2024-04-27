@@ -11,21 +11,21 @@ const pl_images = {
         src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
         alt: 'JavaScript'
     },
-    // react: {
-    //     name: 'React',
-    //     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
-    //     alt: 'React'
-    // },
+    react: {
+        name: 'React',
+        src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+        alt: 'React'
+    },
     golang: {
         name: 'Golang',
         src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg",
         alt: 'Golang'
     },
-    // lua: {
-    //     name: 'Lua',
-    //     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/lua/lua-original.svg",
-    //     alt: 'Lua'
-    // },
+    lua: {
+        name: 'Lua',
+        src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/lua/lua-original.svg",
+        alt: 'Lua'
+    },
     mysql: {
         name: 'MySQL',
         src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",

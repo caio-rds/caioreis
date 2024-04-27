@@ -1,7 +1,6 @@
 import './App.css';
 import TopBar from "./components/topbar";
 import {useEffect, useState} from "react";
-import About from "./components/about";
 import Home from "./components/home";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
@@ -29,9 +28,12 @@ function App() {
 
     const mapArea = {
         home: <Home language={language} setArea={areaHandler}/>,
-        about: <About language={language}/>,
         projects: <Projects language={language}/>,
         contact: <Contact language={language}/>
+    }
+
+    const footer_last = () => {
+        return `${String.fromCharCode(0xA9)} Caio Reis - 2024`
     }
 
     return (
@@ -40,6 +42,13 @@ function App() {
             <div className="content">
                 {mapArea[area]}
             </div>
+            <footer>
+                {
+                    language === 'en-US' ?
+                        `Made with ReactJS and Love ❤️ by ${footer_last()}` :
+                        `Feito com ReactJS e Amor ❤️ por ${footer_last()}`
+                }
+            </footer>
         </div>
     );
 }

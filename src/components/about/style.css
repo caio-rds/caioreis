@@ -1,106 +1,80 @@
 .about {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 420px;
-    padding: 20px;
-    border-radius: 10px;
-    /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);*/
-    row-gap: 20px;
-    width: 1035px;
-}
-
-.about .photoInfo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 10px;
-    width: 1100px;
-}
-
-.about .photoInfo .profilePhoto {
+    height: fit-content;
     border-radius: 8px;
+    padding: 10px;
+    width:fit-content;
     background-color: #1e2126;
-    width: 195px;
-    height: 215px;
+    column-gap: 10px;
+
 }
 
-.about .photoInfo span {
+.about .profilePhoto {
+    border-radius: 100px;
+    background-color: #1e2126;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+.about span {
     display: flex;
     align-items: flex-start;
     justify-content: left;
     flex-direction: column;
     border-radius: 10px;
-}
-
-.about .photoInfo span labelTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    background-color: #1e2126;
-    outline: 3px solid #1e2126;
-    border-radius: 8px 8px 0 0;
-    min-width: 40px;
-    font-weight: bold;
-    padding: 5px 10px 5px 10px;
-}
-
-.about .photoInfo span  labelContent{
+    row-gap: 5px;
     /*background-color: #1e2126;*/
-    background-color: #1e2126;
-    outline: 3px solid #1e2126;
-    padding: 10px;
-    min-width: 190px;
-    max-width: 690px;
-    border-radius: 0 8px 8px 8px;
-    font-size: 16px;
-    height: 166px;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-
+    /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);*/
 }
 
-.about .photoInfo span  inlineContent {
+.about span content {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 10px;
-    padding: 10px;
+    padding:6px;
     font-weight: bold;
 }
 
-.about .photoInfo span  inlineContent img {
+.about span  content img {
     width: 20px;
     height: 20px;
 }
 
 @media (max-width: 1366px) {
-    .about {
-        padding:5px;
-        width: 930px;
-        height: 470px;
-    }
-
-    .about .photoInfo {
-        width: 930px;
-    }
-
-    .about .photoInfo .profilePhoto {
-        width: 170px;
-        height: 180px;
-    }
-
-    .about .photoInfo span labelContent {
-        padding: 0;
-        font-size: 14px;
+    .about .profilePhoto {
+        width: 150px;
         height: 150px;
     }
 
-    .about .photoInfo span inlineContent {
-        font-size: 14px;
-        padding: 8px;
+    .about span {
+        row-gap: 0;
+    }
+
+    .about span content {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .about .profilePhoto {
+        width: 100px;
+        height: 100px;
+    }
+
+    .about span {
+        row-gap: 0;
+    }
+
+    .about span content {
+        padding: 5px;
+    }
+
+    .about span content {
+        padding: 2px;
+        font-size: 12px;
     }
 }

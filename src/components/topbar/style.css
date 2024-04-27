@@ -5,8 +5,42 @@
     align-items: center;
     padding: 20px;
     background-color: #1e2126;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     height: 50px;
+}
+
+.topbar span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: rgba(204, 204, 204, 0.57);
+}
+
+.topbar span div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+}
+
+.topbar span div besideName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.topbar span name{
+    font: 700 38px 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topbar span role {
+    font: 400 12px 'Roboto', sans-serif;
 }
 
 .buttons {
@@ -20,7 +54,7 @@
 }
 
 .language {
-    margin-left: 90%;
+    margin-left: 75%;
     display: flex;
     border-radius: 5px;
     background-color: #282c34;
@@ -51,4 +85,19 @@
     width: 60px;
     border-radius: 8px;
     color: #ececec;
+}
+
+@media (max-width: 1366px) {
+    .topbar {
+        height: 30px;
+    }
+
+    .topbar span name {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .language {
+        margin-left: 68%;
+    }
 }

@@ -8,6 +8,11 @@ export default function Projects({language}) {
             'en-US': "See project in GitHub",
             'pt-BR': "Ver projeto no GitHub"
 
+        },
+        loading: {
+            'en-US': "Loading...",
+            'pt-BR': "Carregando..."
+
         }
     }
     const [projects, setProjects] = useState([])
@@ -32,23 +37,25 @@ export default function Projects({language}) {
                     })
                 }
             });
-            setProjects(result)
+            setTimeout(() => {
+                setProjects(result)
+            }, 2000)
         }
         request().then()
     }, []);
 
 
     return (
+        projects.length === 0 ? <span className={'loader'}>{legend.loading[language]}</span> :
         <div className={"projects"}>
-            {
-                projects.map((project, index) => {
+            {projects.map((project, index) => {
                     return (
                         <div key={index}>
                             <span>
                                 <h3>{project.name}</h3>
-                                <img src={project.icon} alt={project.language} width={25}/>
-                            </span>
-                            <p style={{fontSize: '14px'}}>{project.description}</p>
+                                <img src={project.icon} alt={project.language} />
+                            </ span>
+                            <p>{project.description}</p>
                             <button onClick={() => window.open(project.svn_url, '_blank')}>
                                 <img src={github} alt="GitHub" width={25}/>
                                 {legend.see_project[language]}

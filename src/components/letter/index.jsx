@@ -1,22 +1,47 @@
 import './style.css'
+import Lottie from "react-lottie"
+import animationData from "../../animations/anim.json"
+
 
 export default function Letter({language}) {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    }
+
+    const imgSize = () => {
+        if (window.innerWidth <= 768) return 100
+        if (window.innerWidth <= 1366) return 200
+        return 300
+    }
+
+
+
+
     const legend = {
-        letter: {
-            'en-US': `Hello, I'm Caio Reis, a full stack developer, passionate about technology and programming. I'm always looking for new challenges and learning new things. I'm currently working with React, Node.js, and MongoDB. I'm also a fan of Linux and open source.`,
-            'pt-BR': `Olá, eu sou Caio Reis, um desenvolvedor (quase) full stack, apaixonado por tecnologia e programação. Estou sempre em busca de novos desafios e aprendendo coisas novas. Meu foco atual é em React, Node.js e MongoDB. Também sou um entusiasta de Linux e software livre.`
+        letter_one: {
+            'en-US': `In addition to college subjects, my current focus is on React, Python and MongoDB.`,
+            'pt-BR': `Além das disciplinas da faculdade, meu foco atual é em React, Python e MongoDB.`
         },
-        title: {
-            'en-US': "About",
-            'pt-BR': "Sobre"
-        },
+        letter_two: {
+            'en-US': `The idea of this site is very simple, introduce myself, present my work, make my contacts available and of course,
+             learn more about Front-End, I have always worked as a Back-End but I have learned new technologies.`,
+            'pt-BR': `A ideia deste site é bem simples, me apresentar, apresentar meu trabalho, disponibilizar meus
+            contatos e claro, aprender mais sobre Front-End, sempre atuei como Back-End porém tenho aprendidos novas
+            tecnologias.`
+        }
     }
     return (
         <div className={'letter'}>
-            <label>{legend.title[language]}</label>
-            <content style={{textAlign: "justify"}}>
-                {legend.letter[language]}
-            </content>
+            <span>
+                <p>{legend.letter_one[language]}</p>
+                <p>{legend.letter_two[language]}</p>
+            </span>
+            <Lottie options={defaultOptions} height={imgSize()} width={imgSize()} isPaused={false} isStopped={false}/>
         </div>
     )
 }
