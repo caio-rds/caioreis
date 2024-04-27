@@ -1,7 +1,7 @@
 // noinspection JSValidateTypes
 
 import './style.css'
-import me from '../../assets/me2.png'
+import me from '../../assets/me.png'
 import country from '../../assets/country.png'
 import age from '../../assets/age.png'
 import graduation from '../../assets/graduation.png'
