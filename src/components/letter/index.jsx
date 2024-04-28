@@ -19,8 +19,9 @@ export default function Letter({language}) {
         return 300
     }
 
-
-
+    const isMobile = () => {
+        return window.innerWidth <= 768
+    }
 
     const legend = {
         letter_one: {
@@ -36,6 +37,14 @@ export default function Letter({language}) {
         }
     }
     return (
+        isMobile() ?
+        <div className={'letter'}>
+            <span>
+                <p>{legend.letter_one[language]}</p>
+                <Lottie options={defaultOptions} height={imgSize()} width={imgSize()} isPaused={false} isStopped={false}/>
+                <p>{legend.letter_two[language]}</p>
+            </span>
+        </div> :
         <div className={'letter'}>
             <span>
                 <p>{legend.letter_one[language]}</p>

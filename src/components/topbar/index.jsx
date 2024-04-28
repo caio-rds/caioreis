@@ -19,6 +19,9 @@ export default function TopBar({newArea, setLanguage, language, area}) {
         setLanguage(e.target.value)
     }
 
+    const isMobile = window.innerWidth < 768
+
+
     const role = {
         'en-US': 'Developer & Software Engineer',
         'pt-BR': 'Desenvolvedor & Engenheiro de Software'

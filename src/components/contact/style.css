@@ -31,3 +31,17 @@
 /*    transition: 0.3s;*/
 /*    outline: 1px solid #0ad4ef;*/
 /*}*/
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .contact div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    .contact button {
+        width: 150px;
+    }
+}

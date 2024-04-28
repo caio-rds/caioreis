@@ -9,6 +9,10 @@
     height: 100vh;
 }
 
+.App .mainDisplay {
+    height: 100%;
+    width: 100%;
+}
 
 .content {
     display: flex;
@@ -27,17 +31,58 @@
     border-bottom: 3px solid;
     border-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139)) 1;
     font-size: 14px;
+    position: fixed;
 }
 
 
+
+
 @media (max-width: 1366px) {
+    .App .mainDisplay {
+        height: 98.3%;
+    }
     .content {
         height: 83%;
     }
 }
 
 @media (max-width: 1280px) {
+    .App .mainDisplay {
+        height: 97.8%;
+    }
+
     .content {
         height: 81.5%;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .App {
+        height: 793px;
+        display: flex;
+        row-gap: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .App .mainDisplay{
+        display: flex;
+        height: 93%;
+        border: 1px solid green;
+    }
+
+    .content {
+        height: 800px;
+        min-width: 60%;
+        overflow-x: auto;
+    }
+
+    .App footer {
+        width: 94.7%;
+        position: absolute;
+        bottom:0;
+
+    }
+
 }

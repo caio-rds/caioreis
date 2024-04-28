@@ -38,10 +38,11 @@ function App() {
 
     return (
         <div className="App">
-            <TopBar newArea={areaHandler} setLanguage={languageHandler} language={language} area={area}/>
-            <div className="content">
-                {mapArea[area]}
-            </div>
+
+                <TopBar newArea={areaHandler} setLanguage={languageHandler} language={language} area={area}/>
+                <div className="content">
+                    {mapArea[area]}
+                </div>
             <footer>
                 {
                     language === 'en-US' ?

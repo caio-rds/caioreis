@@ -97,3 +97,13 @@
         font-size: 10px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .experience language {
+        padding: 0;
+    }
+
+    .experience language p {
+        min-width: 30px;
+    }
+}

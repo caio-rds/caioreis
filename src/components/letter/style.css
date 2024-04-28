@@ -48,3 +48,17 @@
         font-size: 12px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .letter {
+        width: 220px;
+        height: 240px;
+        margin-top: 20px;
+    }
+
+    .letter p {
+        max-width: 250px;
+        font-size: 12px;
+    }
+}
