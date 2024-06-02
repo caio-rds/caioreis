@@ -8,6 +8,7 @@
     flex-direction: column;
     column-gap: 10px;
     height: 99%;
+    overflow-x: auto;
 }
 
 .home span {
@@ -63,6 +64,7 @@
     .home span {
         flex-direction: column;
         row-gap: 5px;
+        min-width: 200px;
     }
 
     .home h1 {

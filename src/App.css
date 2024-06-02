@@ -9,11 +9,6 @@
     height: 100vh;
 }
 
-.App .mainDisplay {
-    height: 100%;
-    width: 100%;
-}
-
 .content {
     display: flex;
     flex-direction: column;
@@ -38,19 +33,12 @@
 
 
 @media (max-width: 1366px) {
-    .App .mainDisplay {
-        height: 98.3%;
-    }
     .content {
         height: 83%;
     }
 }
 
 @media (max-width: 1280px) {
-    .App .mainDisplay {
-        height: 97.8%;
-    }
-
     .content {
         height: 81.5%;
     }
@@ -60,21 +48,13 @@
     /* For mobile phones: */
     .App {
         height: 793px;
-        display: flex;
         row-gap: 0;
         position: relative;
         overflow: hidden;
     }
 
-    .App .mainDisplay{
-        display: flex;
-        height: 93%;
-        border: 1px solid green;
-    }
-
     .content {
         height: 800px;
-        min-width: 60%;
         overflow-x: auto;
     }
 

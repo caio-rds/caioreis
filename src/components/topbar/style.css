@@ -103,19 +103,35 @@
 
 @media only screen and (max-width: 768px) {
     .topbar {
-        height: 90%;
-        width: 100px;
-        flex-direction: column;
-        justify-content: flex-start;
         padding:10px;
-        row-gap: 50px;
+        position: relative;
     }
 
-    .topbar .buttons {
-        flex-direction: column;
-        row-gap: 10px;
-        position: sticky;
+    .exposeButtons {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 10px;
     }
+
+    .fas {
+        font-size: 20px;
+        color: #d5d5d5;
+    }
+
+    .buttons {
+        flex-direction: column;
+        display: none;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #1e2126;
+        row-gap: 10px;
+        position: absolute;
+        top: 40px;
+        left: -5px;
+    }
+
 
     .topbar span name {
         font-size: 24px;
@@ -124,13 +140,16 @@
 
     .language {
         margin-left: 0;
+        height: 40px;
     }
 
     .language button {
-        width: 40px;
+        width: 50px;
     }
 
     .language .active {
-        width: 40px;
+
+        width: 50px;
+        height: 40px;
     }
 }

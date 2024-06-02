@@ -1,7 +1,11 @@
 import './style.css'
+import {useState} from "react";
 
 
 export default function TopBar({newArea, setLanguage, language, area}) {
+
+    const [showDisplay, setShowDisplay] = useState('none')
+
     const buttons = {
         home: {'en-US': 'Home', 'pt-BR': 'Início'},
         // about: {'en-US': 'About', 'pt-BR': 'Sobre'},
@@ -27,8 +31,58 @@ export default function TopBar({newArea, setLanguage, language, area}) {
         'pt-BR': 'Desenvolvedor & Engenheiro de Software'
     }
 
+    const toggleButtons = () => {
+        if (showDisplay === 'none') {
+            setShowDisplay('flex')
+        } else {
+            setShowDisplay('none')
+        }
+    }
+
     return (
-        <div className="topbar">
+        isMobile ?
+            <div className="topbar">
+                <div className={"exposeButtons"}
+                     onClick={() => toggleButtons()}
+                     style={{backgroundColor: showDisplay === 'flex' ? '#282c34' : ''}}
+
+                >
+                    <i className="fas fa-bars"></i>
+                    <div className={"buttons"} style={{display: showDisplay}} >
+                        <div className={"language"}>
+                            {
+                                Object.keys(langs).map((lang, index) => (
+                                    <button key={index} value={lang} onClick={changeLanguage}
+                                            className={lang === language ? 'active' : ''}>
+                                        {langs[lang]}</button>
+                                ))
+                            }
+                        </div>
+                        {Object.keys(buttons).map((button, index) => (
+                            <button key={index} value={button}
+                                    onClick={() => newArea(button)}
+                                    style={{
+                                        background: area === button ? '#1e2126' : '',
+                                        fontWeight: area === button ? 'bold' : '',
+                                        boxShadow: area === button ? '5px 5px 10px rgba(0, 0, 0, 0.5)' : ''
+                                    }}
+                            >
+                                {buttons[button][language]}
+                            </button>
+                        ))}
+
+                    </div>
+                </div>
+                <span>
+                    <div>
+                        <besideName>&lt;</besideName>
+                        <name> Caio Reis </name>
+                        <besideName>/&gt;</besideName>
+                    </div>
+                    <role>{role[language]}</role>
+                </span>
+            </div> :
+            <div className="topbar">
             <span>
                 <div>
                     <besideName>&lt;</besideName>
