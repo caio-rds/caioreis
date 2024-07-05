@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Home from "./components/home";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
+import {Box} from "@mui/material";
 
 
 
@@ -40,16 +41,16 @@ function App() {
         <div className="App">
 
                 <TopBar newArea={areaHandler} setLanguage={languageHandler} language={language} area={area}/>
-                <div className="content">
+                <Box className="content">
                     {mapArea[area]}
-                </div>
-            <footer>
-                {
-                    language === 'en-US' ?
-                        `Made with ReactJS and Love ❤️ by ${footer_last()}` :
-                        `Feito com ReactJS e Amor ❤️ por ${footer_last()}`
-                }
-            </footer>
+                </Box>
+                <footer>
+                    {
+                        language === 'en-US' ?
+                            `Made with ReactJS and Love ❤️ by ${footer_last()}` :
+                            `Feito com ReactJS e Amor ❤️ por ${footer_last()}`
+                    }
+                </footer>
         </div>
     );
 }

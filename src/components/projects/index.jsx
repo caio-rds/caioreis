@@ -1,6 +1,7 @@
 import './style.css'
 import {useEffect, useState} from "react";
 import github from '../../assets/github.png'
+import {Button} from "@mui/material";
 
 export default function Projects({language}) {
     const legend = {
@@ -56,10 +57,10 @@ export default function Projects({language}) {
                                 <img src={project.icon} alt={project.language} />
                             </ span>
                             <p>{project.description}</p>
-                            <button onClick={() => window.open(project.svn_url, '_blank')}>
+                            <Button variant="contained" onClick={() => window.open(project.svn_url, '_blank')}>
                                 <img src={github} alt="GitHub" width={25}/>
                                 {legend.see_project[language]}
-                            </button>
+                            </Button>
                         </div>
                     )
                 })

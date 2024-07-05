@@ -4,9 +4,10 @@
 
 .App {
     text-align: center;
-    background-color: #282c34;
+    background-color: #17191e;
     width: 100%;
     height: 100vh;
+    position: relative;
 }
 
 .content {
@@ -26,7 +27,8 @@
     border-bottom: 3px solid;
     border-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139)) 1;
     font-size: 14px;
-    position: fixed;
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -49,20 +51,16 @@
     .App {
         height: 793px;
         row-gap: 0;
-        position: relative;
         overflow: hidden;
     }
 
     .content {
-        height: 800px;
+        padding-top: 20px;
         overflow-x: auto;
     }
 
     .App footer {
         width: 94.7%;
-        position: absolute;
-        bottom:0;
-
     }
 
 }

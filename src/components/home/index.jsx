@@ -3,37 +3,34 @@ import './style.css'
 import Experience from "../experience";
 import Letter from "../letter";
 import About from "../about";
+import {Box, Button} from "@mui/material";
+import DownloadIcon from '@mui/icons-material/Download';
 
 
 
 export default function Home({language}) {
 
-    const legend = {
-        hi: {
-            'en-US': 'Hi, I\'m Caio Reis',
-            'pt-BR': 'Olá, eu sou Caio Reis'
-        },
-        download: {
-            'en-US': "Download my CV",
-            'pt-BR': "Baixe meu currículo"
-        }
+    const DownloadCv = () => {
+        const link = document.createElement('a');
+        const pdf = "./cv.pdf"
+        link.href = pdf;
+        link.download = pdf;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     return (
-        <div className="home">
-            <h1>{legend.hi[language]}</h1>
-            <span>
+        <Box className={'home'} sx={{justifyContent: {xs: 'flex-start'}, alignItems: {xs: 'center'}, border: '1px solid red'}}>
+            <Box sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'}, columnGap: '5px', rowGap: '5px'}}>
                 <About language={language}/>
                 <Experience language={language}/>
-            </span>
+            </Box>
             <Letter language={language}/>
-            <a href={"./cv.pdf"} tabIndex={-1} download>
-                <button>
-                    <i className="fas fa-download"></i>
-                    {legend.download[language]}
-                </button>
-            </a>
-
-        </div>
+            <Button onClick={DownloadCv} variant="outlined" sx={{style: {maxWidth: '200px'}}}
+                    startIcon={<DownloadIcon />} >
+                Download CV
+            </Button>
+        </Box>
     )
 }

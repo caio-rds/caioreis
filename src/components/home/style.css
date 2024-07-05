@@ -1,81 +1,8 @@
 .home {
-    /*background-color: #1e2126;*/
-    padding: 20px;
-    border-radius: 8px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     column-gap: 10px;
-    height: 99%;
-    overflow-x: auto;
 }
 
-.home span {
-    display: flex;
-    column-gap: 5px;
-}
-
-
-.home a {
-    color: #0ad4ef;
-    text-decoration: none;
-    display: flex;
-    padding-top: 10px;
-    justify-content: center;
-}
-
-.home a button {
-    background-color: #1e2126;
-    width: 200px;
-    column-gap: 15px;
-    min-height: 50px;
-    max-height: 50px;
-    justify-content: center;
-    border-radius: 8px;
-}
-
-.home a button:hover {
-    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.76);
-}
-
-.home h1 {
-    font-size: 38px;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.76);
-}
-
-@media (max-width: 1366px) {
-    .home h1 {
-        font-size: 30px;
-    }
-}
-
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .home {
-        padding: 0 0 0 5px;
-        align-content: flex-start;
-        justify-content: flex-start;
-    }
-    .home span {
-        flex-direction: column;
-        row-gap: 5px;
-        min-width: 200px;
-    }
-
-    .home h1 {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
-    .home a button {
-        background-color: #1e2126;
-        width: 190px;
-        column-gap: 15px;
-        min-height: 40px;
-        max-height: 40px;
-    }
-}
