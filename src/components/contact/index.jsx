@@ -25,23 +25,10 @@ export default function Contact({language}) {
             label: 'LinkedIn',
             handlerClick: () => window.open('https://www.linkedin.com/in/caio-reis-04224a20a/', '_blank')
         },
-        twitch: {
-            icon: twitch,
-            label: 'Twitch',
-            handlerClick: () => window.open('https://www.twitch.tv/caiords_', '_blank'),
-        },
         github: {
             icon: github,
             label: 'GitHub',
             handlerClick: () => window.open('https://www.github.com/caio-rds', '_blank'),
-        },
-        youtube: {
-            icon: youtube,
-            label: 'YouTube',
-            handlerClick: () => window.open(
-                'https://www.youtube.com/channel/UCShB4T_s3x20-ZVrZEdO5fw',
-                '_blank'
-            ),
         },
         discord: {
             icon: discord,

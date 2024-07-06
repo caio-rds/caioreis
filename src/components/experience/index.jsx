@@ -66,8 +66,7 @@ export default function Experience({language}) {
                 {Object.keys(pl_images).map((pl) => {
                     return (
                         <language key={pl}>
-                            <img src={pl_images[pl].src} alt={pl_images[pl].alt}/>
-                            <p>{pl_images[pl].name}</p>
+                            <img src={pl_images[pl].src} alt={pl_images[pl].alt}/>                            
                         </language>
                     )
                 })}

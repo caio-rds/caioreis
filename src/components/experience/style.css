@@ -18,12 +18,12 @@
 }
 
 .experience content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+
     justify-content: center;
     align-items: center;
-    height: 212px;
-    padding-top: 5px;
+    height: fit-content;
+    padding: 10px 0 10px 0;
     border-radius: 0 8px 8px 8px;
     background-color: #1e2126;
 
@@ -38,6 +38,7 @@
     user-select: none;
     padding: 10px 10px 0 10px;
     color:white;
+    cursor: pointer;
 
 }
 
