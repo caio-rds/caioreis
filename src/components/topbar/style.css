@@ -6,7 +6,8 @@ besideName {
 name{
     font: 700 34px 'Roboto', sans-serif;
     letter-spacing: 2px;
-    background: -webkit-linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
+    /*background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));*/
+    background: #556cd6;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -59,7 +60,8 @@ role {
 }
 
 .language .active {
-    background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));
+    /*background-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139));*/
+    background: #282c34;
     font-weight: bold;
     border: 5px solid #282c34;
     height: 40px;

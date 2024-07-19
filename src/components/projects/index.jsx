@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Button, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion, AccordionSummary, AccordionDetails, Box } from "@mui/material";
+import animationData from "../../animations/anim.json";
+import Lottie from "react-lottie"
 
 export default function Projects({ language }) {
     const legend = {
@@ -15,28 +17,22 @@ export default function Projects({ language }) {
             'en-US': "Loading...",
             'pt-BR': "Carregando..."
 
+        },
+        title: {
+            'en-US': "Projects",
+            'pt-BR': "Projetos"
         }
     }
 
-    // const columns = [
-    //     { field: 'id', headerName: 'ID', width: 70, headerAlign: 'center' },
-    //     { field: 'name', headerName: 'Name', width: 150, headerAlign: 'center' },
-    //     {
-    //         field: 'language', headerName: 'Language', width: 200, headerAlign: 'center', renderCell: (params) => {
-    //             return (
-    //                 <Box display='flex' alignItems='center' justifyContent='center' columnGap={1}>
-    //                     <img
-    //                         src={
-    //                             `https://raw.githubusercontent.com/devicons/devicon/master/icons/${params.value.toLowerCase()}/${params.value.toLowerCase()}-original.svg`
-    //                         } alt="github" height={25} width={25} className="github-icon" />
-    //                     {params.value}
-    //                 </Box>
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    }
 
-    //             )
-    //         }
-    //     },
-    //     { field: 'description', headerName: 'Description', width: 400, headerAlign: 'center' },
-    // ];
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
@@ -68,32 +64,62 @@ export default function Projects({ language }) {
 
 
     return (
-        <Box sx={{justifyContent: 'center', alignItems: 'center'}}>
+        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
 
         {
             projects.length === 0 ? (
                 <span className={'loader'}>{legend.loading[language]}</span>
             ) : (                
                 
-                <Box>
-                    <h1>Projetos</h1>                    
-                    {projects.map((project) => (
-                    <Accordion key={project.id} sx={{width: '100%'}}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
+                <Box sx={{width: {xs: '96%', md: '50%'}}}>
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#1e2126',
+                        borderRadius: '8px 8px 0 0',
+                        padding: '10px',
+                        rowGap: 2
+                    }}>
+                        <Box display='flex'
+                             justifyContent='center'
+                             columnGap={2}
+                             sx={{alignItems: 'center'}}
                         >
-                            <Typography>{project.name}</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                {project.description}
+                            <Typography variant={'h2'} sx={{
+                                fontSize: {xs: '3rem', md: '4rem'},
+                                height: {xs: '100%'},
+                                width: {xs: '60%', md:'100%'},
+                                borderRadius: '8px 0 0 8px'
+                            }}>
+                                {legend.title[language]}
                             </Typography>
-                            <Button onClick={() => window.open(project.svn_url, '_blank')}>{legend.see_project[language]}</Button>
-                        </AccordionDetails>
-                    </Accordion>
-                ))}
+                            <Lottie
+                                    options={defaultOptions}
+                                    height={140}
+                                    width={140}
+                                    isPaused={false}
+                                    isStopped={false}/>
+                        </Box>
+                    </Box>
+                    {projects.map((project) => (
+                        <Accordion key={project.id} sx={{width: '100%'}}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography>{project.name}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>{project.description}</Typography>
+                                <Button onClick={() => window.open(project.svn_url, '_blank')}>
+                                    {legend.see_project[language]}
+                                </Button>
+                            </AccordionDetails>
+                        </Accordion>
+                    ))}
                 </Box>
                 
         )} 

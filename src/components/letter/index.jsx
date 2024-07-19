@@ -1,34 +1,13 @@
 import './style.css'
-import Lottie from "react-lottie"
-import animationData from "../../animations/anim.json"
+
 import {Box} from "@mui/material";
 
 
 export default function Letter({language}) {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    }
 
-    const imgSize = () => {
-        if (window.innerWidth <= 768) return 150
-        if (window.innerWidth <= 1366) return 200
-        return 300
-    }
-
-    const isMobile = () => {
-        return window.innerWidth <= 768
-    }
 
     const legend = {
-        hi: {
-            'en-US': 'Hi, I\'m Caio Reis',
-            'pt-BR': 'Olá, eu sou Caio Reis'
-        },
+
         letter_one: {
             'en-US': `With a results-oriented approach, I am always looking for new ways to apply and expand my knowledge.
              My goal is to contribute to challenging projects that make a difference and add value through innovative solutions.`,
@@ -46,31 +25,22 @@ export default function Letter({language}) {
         }
     }
     return (
-        isMobile() ?
-            <div className={'letter'}>
-            <span>
-                <h1>{legend.hi[language]}</h1>
-                <p>{legend.letter_one[language]}</p>
-                <Box display='flex' flexDirection='row' alignItems={'center'}>
-                    <Box>
-                        <p>{legend.letter_two[language]}</p>
-                        <p>{legend.letter_three[language]}</p>
-                    </Box>
-
-                     <Lottie options={defaultOptions} height={imgSize()} width={imgSize()} isPaused={false}
-                             isStopped={false}/>
-                </Box>
-            </span>
-            </div> :
-            <div className={'letter'}>
-            <span>
-                <h1>{legend.hi[language]}</h1>
-                <p>{legend.letter_one[language]}</p>
-                <p>{legend.letter_two[language]}</p>
-                <p>{legend.letter_three[language]}</p>
-            </span>
-                <Lottie options={defaultOptions} height={imgSize()} width={imgSize()} isPaused={false}
-                        isStopped={false}/>
-            </div>
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                maxWidth: {xs: '92%', md: '100%'},
+                minHeight: {xs: '49%'},
+                maxHeight: {xs: '49%'},
+                padding: {xs: '10px', md: '20px'},
+                backgroundColor: '#1e2126',
+                borderRadius: {xs: '0px', md: '8px 8px 0 0 '},
+                justifyContent: 'center',
+                rowGap: {xs: '2px', md: '20px'},
+            }}>
+            <p>{legend.letter_one[language]}</p>
+            <p>{legend.letter_two[language]}</p>
+            <p>{legend.letter_three[language]}</p>
+        </Box>
     )
 }

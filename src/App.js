@@ -27,12 +27,6 @@ function App() {
         setLanguage(lang)
     }
 
-    const mapArea = {
-        home: <Home language={language} setArea={areaHandler}/>,
-        projects: <Projects language={language}/>,
-        contact: <Contact language={language}/>
-    }
-
     const footer_last = () => {
         return `${String.fromCharCode(0xA9)} Caio Reis - 2024`
     }
@@ -41,8 +35,16 @@ function App() {
         <div className="App">
 
                 <TopBar newArea={areaHandler} setLanguage={languageHandler} language={language} area={area}/>
-                <Box className="content">
-                    {mapArea[area]}
+                <Box sx={{
+                    paddingBottom: 5,
+                    backgroundColor: '#17191e',
+                    height: '100vh',
+                }}
+                     overflow="auto"
+                >
+                    <Home language={language}/>
+                    <Projects language={language}/>
+                    <Contact language={language}/>
                 </Box>
                 <footer>
                     {

@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import DownloadIcon from "@mui/icons-material/Download";
 
 export default function TopBar({newArea, setLanguage, language}) {
 
@@ -47,10 +48,20 @@ export default function TopBar({newArea, setLanguage, language}) {
         setAnchorElNav(null);
     };
 
+    const DownloadCv = () => {
+        const link = document.createElement('a');
+        const pdf = "./cv.pdf"
+        link.href = pdf;
+        link.download = pdf;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
-        <Box sx={{flexGrow: 1, backgroundColor: 'transparent'}}>
-            <AppBar position="static" sx={{ paddingBottom: '3px', backgroundColor: 'transparent'}}>
-                <Toolbar sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: 'transparent'}}>
+
+            <AppBar position="static" sx={{ paddingBottom: '3px'}}>
+                <Toolbar sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#17191e'}}>
                     <Box sx={{flexGrow: 0, display: {xs: 'flex', md: 'flex'}}}>
                         <IconButton
                             size="large"
@@ -85,6 +96,10 @@ export default function TopBar({newArea, setLanguage, language}) {
                                     </MenuItem>
                                 ))
                             }
+                            <MenuItem onClick={DownloadCv}>
+                                <ListItemIcon><DownloadIcon fontSize="small"/></ListItemIcon>
+                                <ListItemText>Download CV</ListItemText>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     <Box position="absolute" display='flex' flexDirection='column' sx={{left: '50%', transform: 'translateX(-50%)'}}>
@@ -107,7 +122,7 @@ export default function TopBar({newArea, setLanguage, language}) {
                     </Box>
                 </Toolbar>
             </AppBar>
-        </Box>
+
     );
 }
 

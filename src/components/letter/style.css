@@ -2,7 +2,7 @@
     display: flex;
     padding: 10px;
     /*background-color: #1e2126;*/
-    width: 760px;
+    width: 700px;
     flex-direction: row;
     column-gap: 20px;
     justify-content: space-between;

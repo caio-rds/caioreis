@@ -12,8 +12,8 @@ const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'transparent'
-                }
+                    backgroundColor: '#17191e'
+                },
             }
         },
         MuiToolbar: {
@@ -25,6 +25,14 @@ const theme = createTheme({
                 }
             }
         },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#1e2126',
+                    color: 'white'
+                }
+            }
+        }
 
     }
 });

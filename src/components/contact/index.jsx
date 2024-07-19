@@ -1,11 +1,9 @@
 import './style.css'
 import linkedin from '../../assets/linkedin.png'
-import twitch from '../../assets/twitch.png'
 import github from '../../assets/github.png'
-import youtube from '../../assets/youtube.png'
 import discord from '../../assets/discord.png'
 import mail from '../../assets/mail.png'
-import {Button} from "@mui/material";
+import {Box, Button} from "@mui/material";
 
 export default function Contact({language}) {
     const legend = {
@@ -43,7 +41,10 @@ export default function Contact({language}) {
     }
 
     return (
-        <div className="contact">
+        <Box sx={{
+            height: '100%',
+            width: '100%',
+        }}>
             <h1>{legend.title[language]}</h1>
             <p>{legend.description[language]}</p>
             <div>
@@ -62,6 +63,6 @@ export default function Contact({language}) {
                     })
                 }
             </div>
-        </div>
+        </Box>
     )
 }
