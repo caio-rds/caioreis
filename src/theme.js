@@ -29,8 +29,13 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     backgroundColor: '#1e2126',
-                    color: 'white'
-                }
+                },
+                '&:not(:last-child)': {
+                    borderBottom: 0,
+                },
+                '&:before': {
+                    display: 'none',
+                },
             }
         }
 

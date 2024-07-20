@@ -44,19 +44,23 @@ export default function About({language}) {
             alignItems: 'center',
             rowGap: 2,
             backgroundColor: '#1e2126',
-            borderRadius: {xs: '8px 8px 0 0', md: '8px'},
+            borderRadius: {xs: '0', md: '0 0 8px 0'},
             padding: '10px',
+            height: 'fit-content',
             width: {xs: '92%', md: '350px'},
             maxWidth: {xs: '92%', md: '350px'}
         }}>
-            <Avatar alt={'eu'} src={me} sx={{width: {xs: 125, md: 350}, height: {xs: 125, md: 350}}}/>
-            <Box sx={{width: '100%', padding: '5px', justifyContent: 'left', alignItems: 'left', rowGap: '2px'}}
+            <Avatar alt={'eu'} src={me} sx={{width: {xs: 100, md: 350}, height: {xs: 100, md: 350}}}/>
+            <Box sx={{width: '58%', padding: '5px', justifyContent: 'left', alignItems: 'left', rowGap: '2px'}}
             display='flex' flexDirection={'column'}>
                 {Object.keys(personal_info).map((key) => {
                     return (
-                        <Typography startIcon={personal_info[key][language].icon} key={key}>
-                            <img src={personal_info[key][language].icon} alt={key} width={25}/>
-                            {personal_info[key][language].value}
+                        <Typography 
+                            variant={'body2'}
+                            sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'flex-start', md: 'center'}, columnGap: '5px'}}
+                            key={key}>
+                                <img src={personal_info[key][language].icon} alt={key} width={25}/>
+                                {personal_info[key][language].value}
                         </Typography>
                     )
                 })}

@@ -7,6 +7,8 @@ import animationData from "../../animations/anim.json";
 import Lottie from "react-lottie"
 
 export default function Projects({ language }) {
+
+
     const legend = {
         see_project: {
             'en-US': "See project in GitHub",
@@ -32,6 +34,12 @@ export default function Projects({ language }) {
             preserveAspectRatio: "xMidYMid slice"
         }
     }
+
+    const [expanded, setExpanded] = useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panel : false);
+    };
 
     const [projects, setProjects] = useState([])
 
@@ -71,7 +79,8 @@ export default function Projects({ language }) {
                 <span className={'loader'}>{legend.loading[language]}</span>
             ) : (                
                 
-                <Box sx={{width: {xs: '96%', md: '50%'}}}>
+                <Box id='projects' 
+                    sx={{width: {xs: '96%', md: '50%'}, height: {xs: '80vh', md: '80vh'}, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'row',
@@ -84,13 +93,14 @@ export default function Projects({ language }) {
                     }}>
                         <Box display='flex'
                              justifyContent='center'
-                             columnGap={2}
+                             columnGap={1}
                              sx={{alignItems: 'center'}}
                         >
                             <Typography variant={'h2'} sx={{
                                 fontSize: {xs: '3rem', md: '4rem'},
                                 height: {xs: '100%'},
-                                width: {xs: '60%', md:'100%'},
+                                width: {xs: '50%', md:'100%'},
+                                marginLeft: {xs: '10px', md: '0'},
                                 borderRadius: '8px 0 0 8px'
                             }}>
                                 {legend.title[language]}
@@ -98,19 +108,19 @@ export default function Projects({ language }) {
                             <Lottie
                                     options={defaultOptions}
                                     height={140}
-                                    width={140}
+                                    width={180}
                                     isPaused={false}
                                     isStopped={false}/>
                         </Box>
                     </Box>
                     {projects.map((project) => (
-                        <Accordion key={project.id} sx={{width: '100%'}}>
+                        <Accordion key={project.id} sx={{width: '100%'}} onChange={handleChange('panel1')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
-                                <Typography>{project.name}</Typography>
+                                <Typography startIcon={"https://raw.githubusercontent.com/devicons/devicon/master/icons/lua/lua-original.svg"}>{project.name}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>{project.description}</Typography>

@@ -19,8 +19,14 @@ function App() {
     }, []);
 
     const areaHandler = (area) => {
-        localStorage.setItem('area', area)
-        setArea(area)
+        const mainContent = document.getElementById('mainContent');
+        const element = mainContent.querySelector(`#${area}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            localStorage.setItem('area', area);
+        } else {
+            console.error(`Elemento com ID '${area}' não encontrado dentro de mainContent.`);
+        }
     }
 
     const languageHandler = (lang) => {
@@ -40,7 +46,8 @@ function App() {
                     backgroundColor: '#17191e',
                     height: '100vh',
                 }}
-                     overflow="auto"
+                    id='mainContent'
+                    overflow="auto"
                 >
                     <Home language={language}/>
                     <Projects language={language}/>

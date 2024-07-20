@@ -18,8 +18,7 @@ export default function TopBar({newArea, setLanguage, language}) {
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const buttons = {
-        home: {'en-US': 'Home', 'pt-BR': 'Início'},
-        // about: {'en-US': 'About', 'pt-BR': 'Sobre'},
+        home: {'en-US': 'Home', 'pt-BR': 'Início'},        
         projects: {'en-US': 'Projects', 'pt-BR': 'Projetos'},
         contact: {'en-US': 'Contact', 'pt-BR': 'Contato'}
     }
@@ -47,16 +46,6 @@ export default function TopBar({newArea, setLanguage, language}) {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
-    const DownloadCv = () => {
-        const link = document.createElement('a');
-        const pdf = "./cv.pdf"
-        link.href = pdf;
-        link.download = pdf;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
 
     return (
 
@@ -96,9 +85,21 @@ export default function TopBar({newArea, setLanguage, language}) {
                                     </MenuItem>
                                 ))
                             }
-                            <MenuItem onClick={DownloadCv}>
+                            <MenuItem>
                                 <ListItemIcon><DownloadIcon fontSize="small"/></ListItemIcon>
-                                <ListItemText>Download CV</ListItemText>
+                                <ListItemText><a href="./cv.pdf" download>Download CV</a></ListItemText>
+                            </MenuItem>
+                            <MenuItem>
+
+                                <div className={"language"}>{
+                                    Object.keys(languages).map((lang, index) => (
+                                        <button key={index} value={lang} onClick={changeLanguage}
+                                                className={lang === language ? 'active' : ''}>
+                                            {languages[lang]}
+                                        </button>
+                                    ))
+                                }</div>
+
                             </MenuItem>
                         </Menu>
                     </Box>
@@ -110,16 +111,7 @@ export default function TopBar({newArea, setLanguage, language}) {
                         </Box>
                         <role>{language === 'en-US' ? 'Software Engineer' : 'Engenheiro de Software'}</role>
                     </Box>
-                    <Box>
-                        <div className={"language"}>{
-                            Object.keys(languages).map((lang, index) => (
-                                <button key={index} value={lang} onClick={changeLanguage}
-                                        className={lang === language ? 'active' : ''}>
-                                    {languages[lang]}
-                                </button>
-                            ))
-                        }</div>
-                    </Box>
+                    
                 </Toolbar>
             </AppBar>
 

@@ -1,13 +1,10 @@
-import './style.css'
-
-import {Box} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 
 export default function Letter({language}) {
 
 
     const legend = {
-
         letter_one: {
             'en-US': `With a results-oriented approach, I am always looking for new ways to apply and expand my knowledge.
              My goal is to contribute to challenging projects that make a difference and add value through innovative solutions.`,
@@ -30,17 +27,16 @@ export default function Letter({language}) {
                 display: 'flex',
                 flexDirection: 'column',
                 maxWidth: {xs: '92%', md: '100%'},
-                minHeight: {xs: '49%'},
-                maxHeight: {xs: '49%'},
+                minHeight: {xs: '60%', md: '74%'},
+                maxHeight: {xs: '60%', md: '74%'},
                 padding: {xs: '10px', md: '20px'},
-                backgroundColor: '#1e2126',
-                borderRadius: {xs: '0px', md: '8px 8px 0 0 '},
+                backgroundColor: '#1e2126',                
                 justifyContent: 'center',
-                rowGap: {xs: '2px', md: '20px'},
+                rowGap: {xs: '10px', md: '20px'},
             }}>
-            <p>{legend.letter_one[language]}</p>
-            <p>{legend.letter_two[language]}</p>
-            <p>{legend.letter_three[language]}</p>
+            <Typography variant={'subtitle1'}>{legend.letter_one[language]}</Typography>
+            <Typography variant={'subtitle2'}>{legend.letter_two[language]}</Typography>
+            <Typography variant={'body2'} sx={{marginTop: '20px'}}>{legend.letter_three[language]}</Typography>
         </Box>
     )
 }

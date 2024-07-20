@@ -23,21 +23,14 @@
 }
 
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    /*.App {*/
-    /*    height: 793px;*/
-    /*    row-gap: 0;*/
-    /*    overflow: hidden;*/
-    /*}*/
+::-webkit-scrollbar {
+    width: 10px;
+}
 
-    /*.content {*/
-    /*    padding-top: 20px;*/
-    /*    overflow-x: auto;*/
-    /*}*/
+::-webkit-scrollbar-track {
+    background: #1e2126;
+}
 
-    .App footer {
-        width: 94.7%;
-    }
-
+::-webkit-scrollbar-thumb {
+    background: #282828;
 }

@@ -55,34 +55,6 @@
     font-size: 16px;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: #282c34;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #1e2126;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #797979
-}
-
-@media (max-width: 1366px) {
-
-    .projects div p {
-        font-size: 14px;
-    }
-
-    .projects button {
-        height: 30px;
-        width: fit-content;
-        font-size: 12px;
-    }
-}
-
 .loader {
     width: fit-content;
     font-weight: bold;
