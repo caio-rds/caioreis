@@ -1,39 +1,75 @@
-import './style.css'
-
 import Experience from "../experience";
 import Letter from "../letter";
 import About from "../about";
+import {Box, Typography} from "@mui/material";
+
+
 
 
 
 export default function Home({language}) {
 
-    const legend = {
-        hi: {
-            'en-US': 'Hi, I\'m Caio Reis',
-            'pt-BR': 'Olá, eu sou Caio Reis'
-        },
-        download: {
-            'en-US': "Download my CV",
-            'pt-BR': "Baixe meu currículo"
-        }
+    const isMobile = () => {
+        return window.innerWidth <= 768
     }
+     const hi = {
+         'en-US': 'Hello, I am Caio Reis',
+         'pt-BR': 'Olá, eu sou Caio Reis'
+     }
+
 
     return (
-        <div className="home">
-            <h1>{legend.hi[language]}</h1>
-            <span>
-                <About language={language}/>
-                <Experience language={language}/>
-            </span>
-            <Letter language={language}/>
-            <a href={"./cv.pdf"} tabIndex={-1} download>
-                <button>
-                    <i className="fas fa-download"></i>
-                    {legend.download[language]}
-                </button>
-            </a>
+        <Box id='home' sx={{justifyContent: {xs: 'flex-start', md: 'flex-start'}, alignItems: 'center', height: '100%', display: 'flex', flexDirection: 'column'}}
+             display={'flex'} rowGap={'5px'}>            
+            {
+                isMobile() ?
+                <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                    <Typography variant={'h1'} sx={{
+                            marginTop: '5px',
+                            fontSize: {xs: '2.2rem', md: '3.5rem',
+                            backgroundColor: '#1e2126',
+                            padding: '10px',
+                            width: '92%',
+                            borderRadius: '8px 8px 0 0'
+                        }}
+                    }>
+                            {hi[language]}
+                    </Typography>
+                    <Box sx={{display: 'flex', flexDirection: 'column', marginTop: '5px', rowGap: '5px', alignItems: 'center'}}>
+                        <About language={language}/>
+                        <Letter language={language}/>
+                        <Experience language={language}/>
+                    </Box>
+                </Box>
+                :
+                <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', rowGap: '5px', marginTop: '100px'}}>
+                    <Typography variant={'h1'} sx={{                                
+                        fontSize: {xs: '2.2rem', md: '3.5rem'},
+                        backgroundColor: '#1e2126',
+                        padding: '10px',
+                        width: '54.1%',
+                        borderRadius: '8px 8px 0 0'
+                    }}>
+                            {hi[language]}
+                    </Typography>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center',
+                            alignItems: 'center',                            
+                            maxWidth: 'fit-content',
+                            columnGap: '5px'
+                    }}>
+                        <Box sx={{display: 'flex', flexDirection: 'column', rowGap: '5px', maxWidth: '35%', height: '100%'}}>
+                            <Letter language={language}/>
+                            <Experience />
+                        </Box>
+                        <About language={language}/>
+                    </Box>
+                </Box>
+            }
 
-        </div>
+        </Box>
     )
 }

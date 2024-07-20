@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Home from "./components/home";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
+import {Box} from "@mui/material";
 
 
 
@@ -18,18 +19,18 @@ function App() {
     }, []);
 
     const areaHandler = (area) => {
-        localStorage.setItem('area', area)
-        setArea(area)
+        const mainContent = document.getElementById('mainContent');
+        const element = mainContent.querySelector(`#${area}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            localStorage.setItem('area', area);
+        } else {
+            console.error(`Elemento com ID '${area}' não encontrado dentro de mainContent.`);
+        }
     }
 
     const languageHandler = (lang) => {
         setLanguage(lang)
-    }
-
-    const mapArea = {
-        home: <Home language={language} setArea={areaHandler}/>,
-        projects: <Projects language={language}/>,
-        contact: <Contact language={language}/>
     }
 
     const footer_last = () => {
@@ -40,16 +41,25 @@ function App() {
         <div className="App">
 
                 <TopBar newArea={areaHandler} setLanguage={languageHandler} language={language} area={area}/>
-                <div className="content">
-                    {mapArea[area]}
-                </div>
-            <footer>
-                {
-                    language === 'en-US' ?
-                        `Made with ReactJS and Love ❤️ by ${footer_last()}` :
-                        `Feito com ReactJS e Amor ❤️ por ${footer_last()}`
-                }
-            </footer>
+                <Box sx={{
+                    paddingBottom: 5,
+                    backgroundColor: '#17191e',
+                    height: '100vh',
+                }}
+                    id='mainContent'
+                    overflow="auto"
+                >
+                    <Home language={language}/>
+                    <Projects language={language}/>
+                    <Contact language={language}/>
+                </Box>
+                <footer>
+                    {
+                        language === 'en-US' ?
+                            `Made with ReactJS and Love ❤️ by ${footer_last()}` :
+                            `Feito com ReactJS e Amor ❤️ por ${footer_last()}`
+                    }
+                </footer>
         </div>
     );
 }

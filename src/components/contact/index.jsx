@@ -1,10 +1,11 @@
 import './style.css'
 import linkedin from '../../assets/linkedin.png'
-import twitch from '../../assets/twitch.png'
 import github from '../../assets/github.png'
-import youtube from '../../assets/youtube.png'
 import discord from '../../assets/discord.png'
 import mail from '../../assets/mail.png'
+import {Box, Button} from "@mui/material";
+import animationData from "../../animations/contact.json";
+import Lottie from "react-lottie"
 
 export default function Contact({language}) {
     const legend = {
@@ -13,8 +14,8 @@ export default function Contact({language}) {
             'pt-BR': "Contato"
         },
         description: {
-            'en-US': "Here is a list of my contact information:",
-            'pt-BR': "Aqui está uma lista com as minhas informações de contato:"
+            'en-US': "Options to get in touch with me",
+            'pt-BR': "Opções para entrar em contato comigo"
         },
 
     }
@@ -22,64 +23,72 @@ export default function Contact({language}) {
         linkedin: {
             icon: linkedin,
             label: 'LinkedIn',
-            handlerClick: () => window.open('https://www.linkedin.com/in/caio-reis-04224a20a/', '_blank'),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(13, 85, 209,1)'
-        },
-        twitch: {
-            icon: twitch,
-            label: 'Twitch',
-            handlerClick: () => window.open('https://www.twitch.tv/caiords_', '_blank'),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(128, 5, 242,1)'
+            handlerClick: () => window.open('https://www.linkedin.com/in/caio-reis-04224a20a/', '_blank')
         },
         github: {
             icon: github,
             label: 'GitHub',
             handlerClick: () => window.open('https://www.github.com/caio-rds', '_blank'),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(18, 18, 18,1)'
-        },
-        youtube: {
-            icon: youtube,
-            label: 'YouTube',
-            handlerClick: () => window.open(
-                'https://www.youtube.com/channel/UCShB4T_s3x20-ZVrZEdO5fw',
-                '_blank'
-            ),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(230, 7, 7,1)'
         },
         discord: {
             icon: discord,
             label: 'Discord',
             handlerClick: () => window.navigator.clipboard.writeText('caiords'),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(34, 117, 212,1)'
         },
         email: {
             icon: mail,
             label: 'Email',
             handlerClick: () => window.open('mailto:caiodtn@gmail.com'),
-            mouseIn: (e) => e.target.style.backgroundColor = 'rgba(16, 201, 115,1)'
+        }
+    }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
         }
     }
 
     return (
-        <div className="contact">
-            <h1>{legend.title[language]}</h1>
-            <p>{legend.description[language]}</p>
-            <div>
+        <Box id='contact' sx={{
+            height: '90%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}> 
+            <Box sx={{display: 'flex'}}>
+                <Box>
+                    <h1>{legend.title[language]}</h1>
+                    <p>{legend.description[language]}</p>
+                </Box>
+                <Lottie
+                    options={defaultOptions}
+                    height={140}
+                    width={140}
+                    isPaused={false}
+                    isStopped={false}/>
+            </Box>
+            
+            <Box>
                 {
                     Object.keys(socials).map((key) => {
                         return (
-                            <button
+                            <Button
+                                variant="contained"
                                 key={key}
-                                onClick={socials[key].handlerClick}
-                                onMouseEnter={socials[key].mouseIn}
-                                onMouseLeave={(e) => e.target.style.backgroundColor = '#1e2126'}>
-                                    <img alt={key} src={socials[key].icon} width={30}/>
+                                sx={{justifyContent:"flex-start", alignItems:"center", display:"flex", margin: 1, minWidth: '200px'}}
+                                startIcon={<img alt={key} src={socials[key].icon} width={30}/>}
+                                onClick={socials[key].handlerClick}>
                                     {socials[key].label}
-                            </button>
+                            </Button>
                         )
                     })
                 }
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }

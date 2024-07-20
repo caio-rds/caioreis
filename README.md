@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Minhas Competências Técnicas:
+Docker: Conhecimento em containerização e criação de ambientes de desenvolvimento consistentes.
+Bancos de Dados:
+MongoDB: Experiência em bancos de dados NoSQL e manipulação de grandes volumes de dados.
+MySQL e PostgreSQL: Forte conhecimento em bancos de dados relacionais e modelagem de dados.
+Desenvolvimento Front-End:
+React: Criação de interfaces de usuário dinâmicas e responsivas.
+Linguagens de Programação:
+Lua: Familiaridade com scripting e desenvolvimento em sistemas embarcados.
+Python: Desenvolvimento de scripts eficientes e automação de processos.
+Go: Programação de alto desempenho e desenvolvimento de aplicações robustas.
+JavaScript: Construção de funcionalidades interativas para a web.

@@ -4,18 +4,10 @@
 
 .App {
     text-align: center;
-    background-color: #282c34;
     width: 100%;
     height: 100vh;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 85.65%;
     color: #b2b2b2;
+    overflow: hidden;
 }
 
 .App footer {
@@ -26,43 +18,19 @@
     border-bottom: 3px solid;
     border-image: linear-gradient(45deg, rgb(101, 3, 192), rgb(241, 5, 139)) 1;
     font-size: 14px;
-    position: fixed;
+    position: absolute;
+    bottom: 0;
 }
 
 
-
-
-@media (max-width: 1366px) {
-    .content {
-        height: 83%;
-    }
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-@media (max-width: 1280px) {
-    .content {
-        height: 81.5%;
-    }
+::-webkit-scrollbar-track {
+    background: #1e2126;
 }
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .App {
-        height: 793px;
-        row-gap: 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .content {
-        height: 800px;
-        overflow-x: auto;
-    }
-
-    .App footer {
-        width: 94.7%;
-        position: absolute;
-        bottom:0;
-
-    }
-
+::-webkit-scrollbar-thumb {
+    background: #282828;
 }
