@@ -48,7 +48,7 @@ export default function Home({language}) {
                         fontSize: {xs: '2.2rem', md: '3.5rem'},
                         backgroundColor: '#1e2126',
                         padding: '0px',
-                        width: '100%',
+                        width: '99.7%',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
