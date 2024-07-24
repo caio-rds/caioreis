@@ -5,6 +5,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: fit-content;
 }
 
 code {
@@ -12,16 +13,3 @@ code {
     monospace;
 }
 
-button {
-    background-color: #282c34;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

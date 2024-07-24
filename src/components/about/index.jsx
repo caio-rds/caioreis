@@ -4,10 +4,8 @@ import './style.css'
 import me from '../../assets/me.png'
 import country from '../../assets/country.png'
 import age from '../../assets/age.png'
-import graduation from '../../assets/graduation.png'
-import stack from '../../assets/stack.png'
-import state from '../../assets/state.png'
 import diploma from '../../assets/diploma.png'
+import {Avatar, Box, Typography} from "@mui/material";
 
 
 const birthdate = () => {
@@ -26,24 +24,12 @@ const personal_info = {
         'pt-BR': {icon: age, value: birthdate() + ' anos'}
     },
     location: {
-        'en-US': {icon: state, value: 'Rio de Janeiro, RJ'},
-        'pt-BR': {icon: state, value: 'Rio de Janeiro, RJ'}
-    },
-    country: {
-        'en-US': {icon: country, value: 'Brazil'},
-        'pt-BR': {icon: country, value: 'Brasil'}
-    },
-    graduation: {
-        'en-US': {icon: graduation, value: `Software Eng. `,},
-        'pt-BR': {icon: graduation, value: `Eng. de Software `}
+        'en-US': {icon: country, value: 'Rio de Janeiro, RJ'},
+        'pt-BR': {icon: country, value: 'Rio de Janeiro, RJ'}
     },
     period: {
-        'en-US': {icon: diploma, value: `${university_period()}º period`},
-        'pt-BR': {icon: diploma, value: `${university_period()}º período`}
-    },
-    stack: {
-        'en-US': {icon: stack, value: 'FullStack'},
-        'pt-BR': {icon: stack, value: 'FullStack'}
+        'en-US': {icon: diploma, value: `${university_period()}º Sem., Software Eng.`},
+        'pt-BR': {icon: diploma, value: `${university_period()}º Sem., Eng. de Software`}
     }
 }
 
@@ -51,21 +37,34 @@ const personal_info = {
 export default function About({language}) {
 
     return (
-        <div className="about">
-
-                <img className={'profilePhoto'} src={me} alt={'profile'}/>
-                <span>
-
-                    {Object.keys(personal_info).map((key) => {
-                        return (
-                            <content key={key}>
-                                <img src={personal_info[key][language].icon} alt={key}/>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: {xs: 'row', md: 'column'},
+            justifyContent: 'center',
+            alignItems: 'center',
+            rowGap: 2,
+            backgroundColor: '#1e2126',
+            borderRadius: {xs: '0', md: '0 0 8px 0'},
+            padding: '10px',
+            height: 'fit-content',
+            width: {xs: '92%', md: '350px'},
+            maxWidth: {xs: '92%', md: '350px'}
+        }}>
+            <Avatar alt={'eu'} src={me} sx={{width: {xs: 100, md: 350}, height: {xs: 100, md: 350}}}/>
+            <Box sx={{width: '58%', padding: '5px', justifyContent: 'left', alignItems: 'left', rowGap: '2px'}}
+            display='flex' flexDirection={'column'}>
+                {Object.keys(personal_info).map((key) => {
+                    return (
+                        <Typography 
+                            variant={'body2'}
+                            sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'flex-start', md: 'center'}, columnGap: '5px'}}
+                            key={key}>
+                                <img src={personal_info[key][language].icon} alt={key} width={25}/>
                                 {personal_info[key][language].value}
-                            </content>
-                        )
-                    })}
-                </span>
-
-        </div>
+                        </Typography>
+                    )
+                })}
+            </Box>
+        </Box>
     )
 }
