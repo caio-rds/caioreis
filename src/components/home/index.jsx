@@ -20,7 +20,7 @@ export default function Home({language}) {
 
     return (
         <Box id='home' 
-            sx={{justifyContent: {xs: 'flex-start', md: 'flex-start'}, alignItems: 'center', border: '1px solid red',height: '100%', display: 'flex', flexDirection: 'column'}}
+            sx={{justifyContent: {xs: 'flex-start', md: 'flex-start'}, alignItems: 'center', height: '100%', display: 'flex', flexDirection: 'column'}}
              display={'flex'} rowGap={'5px'}>            
             {
                 isMobile() ?
