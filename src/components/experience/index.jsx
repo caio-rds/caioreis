@@ -52,6 +52,7 @@ export default function Experience() {
     return (
         <Box sx={{
             display: 'flex',
+            minWidth: {xs: '97%', md: '100%'},
             maxWidth: {xs: '97%', md: '100%'},
             justifyContent: 'center',
             alignItems: 'center',

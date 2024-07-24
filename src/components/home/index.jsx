@@ -19,7 +19,8 @@ export default function Home({language}) {
 
 
     return (
-        <Box id='home' sx={{justifyContent: {xs: 'flex-start', md: 'flex-start'}, alignItems: 'center', height: '100%', display: 'flex', flexDirection: 'column'}}
+        <Box id='home' 
+            sx={{justifyContent: {xs: 'flex-start', md: 'flex-start'}, alignItems: 'center', border: '1px solid red',height: '100%', display: 'flex', flexDirection: 'column'}}
              display={'flex'} rowGap={'5px'}>            
             {
                 isMobile() ?
@@ -42,12 +43,16 @@ export default function Home({language}) {
                     </Box>
                 </Box>
                 :
-                <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', rowGap: '5px', marginTop: '100px'}}>
+                <Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column', rowGap: '5px', marginTop: '100px', width: '1050px'}}>
                     <Typography variant={'h1'} sx={{                                
                         fontSize: {xs: '2.2rem', md: '3.5rem'},
                         backgroundColor: '#1e2126',
-                        padding: '10px',
-                        width: '54.1%',
+                        padding: '0px',
+                        width: '99.7%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100px',
                         borderRadius: '8px 8px 0 0'
                     }}>
                             {hi[language]}
@@ -56,12 +61,12 @@ export default function Home({language}) {
                         sx={{
                             display: 'flex',
                             flexDirection: 'row',
-                            justifyContent: 'center',
-                            alignItems: 'center',                            
-                            maxWidth: 'fit-content',
-                            columnGap: '5px'
+                            justifyContent: 'flex-start',
+                            alignItems: 'center', 
+                            columnGap: '5px',
+                            width: '100%',
                     }}>
-                        <Box sx={{display: 'flex', flexDirection: 'column', rowGap: '5px', maxWidth: '35%', height: '100%'}}>
+                        <Box sx={{display: 'flex', flexDirection: 'column', rowGap: '5px', maxWidth: '64%', height: '100%'}}>
                             <Letter language={language}/>
                             <Experience />
                         </Box>

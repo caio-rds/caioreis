@@ -26,7 +26,8 @@ export default function Letter({language}) {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                maxWidth: {xs: '92%', md: '100%'},
+                minWidth: {xs: '92%', md: '94%'},
+                maxWidth: {xs: '92%', md: '94%'},
                 minHeight: {xs: '60%', md: '74%'},
                 maxHeight: {xs: '60%', md: '74%'},
                 padding: {xs: '10px', md: '20px'},
