@@ -37,7 +37,18 @@ const theme = createTheme({
                     display: 'none',
                 },
             }
-        }
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'rgba(100, 100, 100, 0.75)',
+                    color: 'white',
+                    '&:hover': {
+                        backgroundColor: '#556cd6',
+                    }
+                }
+            }
+        },
 
     }
 });
