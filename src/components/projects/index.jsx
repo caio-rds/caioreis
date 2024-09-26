@@ -1,8 +1,8 @@
 import './style.css'
-import { useEffect, useState } from "react";
-import { Box, Button, Typography, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
+import { useEffect, useState, useRef } from "react";
+import { Box, Button, Typography, List, ListItem, ListItemText, ListItemIcon, Tooltip } from "@mui/material";
 import { Description as DescriptionIcon } from "@mui/icons-material";
-import { FaPython, FaReact, FaJsSquare, FaDocker } from "react-icons/fa";
+import { FaPython, FaReact, FaJsSquare, FaDocker, FaExternalLinkAlt } from "react-icons/fa";
 import { SiGoland, SiLua  } from "react-icons/si";
 import animationData from "../../animations/anim.json";
 import Lottie from "react-lottie"
@@ -52,6 +52,7 @@ const icons = {
 export default function Projects({ language }) {
 
     const [modalOpen, setModalOpen] = useState(false)
+    const projectsBoxRef = useRef(null)
 
     const legend = {
         see_project: {
@@ -91,6 +92,13 @@ export default function Projects({ language }) {
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
+        if (modalOpen && projectsBoxRef.current) {
+            projectsBoxRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
+    }, [modalOpen])
+
+
+    useEffect(() => {
         const request = async () => {
             const response = await fetch('https://api.github.com/users/caio-rds/repos')
             const data = await response.json()
@@ -125,7 +133,7 @@ export default function Projects({ language }) {
                 projects.length === 0 ? (
                     <span className={'loader'}>{legend.loading[language]}</span>
                 ) : (
-                <Box sx={style.projects}>
+                <Box sx={style.projects} ref={projectsBoxRef}>
                     <Box sx={style.header}>
                         <Box display='flex' justifyContent='center' columnGap={1} sx={{alignItems: 'center'}}>
                             <Typography variant={'h6'} sx={style.title}>                            
@@ -147,7 +155,13 @@ export default function Projects({ language }) {
                                 <ListItemIcon>{ icons[project.language] || <DescriptionIcon /> }</ListItemIcon>
                                 <ListItemText primary={project.name} secondary={project.description} primaryTypographyProps={{variant: 'h6', sx:{color: '#fff'}}} secondaryTypographyProps={{ variant: 'body2' }} />
                             </Box>
-                            <Button variant="contained" href={project.link} target="_blank">GITHUB</Button>
+
+                            <Tooltip title={legend.see_project[language]} arrow slotProps={{ popper: { modifiers: [{ name: 'offset', options: { offset: [0, -5], }, }, ], }, }}>
+                                <Button variant="contained" onClick={() => window.open(project.svn_url, '_blank')}>
+                                    <FaExternalLinkAlt size={16} color={'#fff'}/>
+                                </Button>
+                            </Tooltip>
+                            
                         </ListItem>
                     ))}
                     </List>
