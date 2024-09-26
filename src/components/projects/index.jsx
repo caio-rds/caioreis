@@ -26,7 +26,7 @@ const style = {
         rowGap: 2
     },
     title: {
-        fontSize: {xs: '3rem', md: '4rem'},
+        fontSize: {xs: '2rem', md: '3rem'},
         height: {xs: '100%'},
         width: {xs: '50%', md:'100%'},
         marginLeft: {xs: '10px', md: '0'},
@@ -55,7 +55,7 @@ export default function Projects({ language }) {
 
     const legend = {
         see_project: {
-            'en-US': "See in GitHub",
+            'en-US': "See on GitHub",
             'pt-BR': "Ver no GitHub"
 
         },
@@ -128,13 +128,13 @@ export default function Projects({ language }) {
                 <Box sx={style.projects}>
                     <Box sx={style.header}>
                         <Box display='flex' justifyContent='center' columnGap={1} sx={{alignItems: 'center'}}>
-                            <Typography variant={'h4'} sx={style.title}>                            
+                            <Typography variant={'h6'} sx={style.title}>                            
                                 {legend.title[language]}
                             </Typography>
                             <Lottie
                                 options={defaultOptions}
-                                height={140}
-                                width={180}
+                                height={130}
+                                width={170}
                                 isPaused={false}
                                 isStopped={false}/>
                         </Box>
@@ -142,12 +142,12 @@ export default function Projects({ language }) {
                     
                     <List>
                     {projects.map((project, index) => (
-                        <ListItem key={index} sx={{ display: "flex", justifyContent: "space-between", padding: "10px 0", flexDirection: {xs: 'column', md: 'row'}}}>
-                            <Box sx={{ display: "flex", alignItems: "center", width:'60%'}}>
+                        <ListItem key={index} sx={{ display: "flex", justifyContent: "space-between", padding: "0 10px 0 10px", flexDirection: 'row'}}>
+                            <Box sx={{ display: "flex", alignItems: "center", width:'75%'}}>
                                 <ListItemIcon>{ icons[project.language] || <DescriptionIcon /> }</ListItemIcon>
                                 <ListItemText primary={project.name} secondary={project.description} primaryTypographyProps={{variant: 'h6', sx:{color: '#fff'}}} secondaryTypographyProps={{ variant: 'body2' }} />
                             </Box>
-                            <Button variant="contained" href={project.link} target="_blank">{legend.see_project[language]}</Button>
+                            <Button variant="contained" href={project.link} target="_blank">GITHUB</Button>
                         </ListItem>
                     ))}
                     </List>

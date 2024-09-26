@@ -1,4 +1,4 @@
-import me from '../../assets/me.png'
+import me from '../../assets/me2.png'
 import {Avatar, Box, Typography} from "@mui/material";
 
 
