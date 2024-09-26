@@ -149,7 +149,7 @@ export default function Experience({language}) {
             <Divider sx={style.divider}/>
             <Modal open={openModal} onClose={() => setOpenModal(false)}>{
             pl_images[currentPl] != null ?
-            <Box sx={style}>
+            <Box sx={style.modal}>
                 <Box sx={{display: 'flex', alignItems: 'center', columnGap: '12px'}}>
                     {pl_images[currentPl].src}
                     <Typography variant={'h4'}>{pl_images[currentPl].name}</Typography>
