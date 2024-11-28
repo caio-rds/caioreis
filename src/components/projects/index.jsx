@@ -148,7 +148,7 @@ export default function Projects({ language }) {
                         </Box>
                     </Box>
                     
-                    <List>
+                    <List sx={{maxHeight: {xs: '60vh', md: '80vh'}, overflow: 'auto', padding: '0 10px 0 10px'}}>
                     {projects.map((project, index) => (
                         <ListItem key={index} sx={{ display: "flex", justifyContent: "space-between", padding: "0 10px 0 10px", flexDirection: 'row'}}>
                             <Box sx={{ display: "flex", alignItems: "center", width:'75%'}}>
