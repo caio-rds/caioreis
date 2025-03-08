@@ -1,26 +1,95 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #27272a; /* zinc-800 */
+  --background: #fafafa; /* zinc-50 */
+  --background-component: #ffffff; /* white for components */
+  --primary: #059669; /* emerald-600 */
+  --secondary: #2563eb; /* blue-600 */
+  --accent: #8b5cf6; /* violet-500 */
+  --border: #e4e4e7; /* zinc-200 */
+  --transition-duration: 250ms; /* faster transitions - reduced from 600ms */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --foreground: #e4e4e7; /* zinc-200 */
+  --background: #18181b; /* zinc-900 */
+  --background-component: #27272a; /* zinc-800 for components */
+  --primary: #34d399; /* emerald-400 */
+  --secondary: #60a5fa; /* blue-400 */
+  --accent: #a78bfa; /* violet-400 */
+  --border: #3f3f46; /* zinc-700 */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  /* Add transition for body */
+  transition: background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+}
+
+/* Enhanced smooth transitions - longer duration and easing */
+* {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--transition-duration);
+}
+
+/* For theme toggle, improve the transition */
+html {
+  transition: background-color var(--transition-duration) ease;
+}
+
+html.dark {
+  transition: background-color var(--transition-duration) ease;
+}
+
+/* Terminal style text effect */
+.terminal-text::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.zinc.100');
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.zinc.800');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.zinc.300');
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.zinc.600');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.zinc.400');
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.zinc.500');
 }
