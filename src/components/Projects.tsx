@@ -187,7 +187,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
 
             <motion.button
               onClick={() => setFilter(null)}
-              className={`px-3 py-1 text-xs font-mono rounded-md ${
+              className={`px-3 py-1 text-xs font-mono rounded-md cursor-pointer ${
                 filter === null
                   ? isDarkMode
                     ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
@@ -206,7 +206,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
               <motion.button
                 key={lang}
                 onClick={() => setFilter(lang)}
-                className={`px-3 py-1 text-xs font-mono rounded-md ${
+                className={`px-3 py-1 text-xs font-mono rounded-md cursor-pointer ${
                   filter === lang
                     ? isDarkMode
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'

@@ -7,6 +7,7 @@ import TechCardsContainer from '@/components/TechCardsContainer';
 import StatisticsSection from '@/components/StatisticsSection';
 import Projects from '@/components/Projects';
 import PersonalInfos from '@/components/PersonalInfos';
+import StructuredData from '@/components/StructuredData';
 
 export default function Home() {
   const { mounted } = useLanguage();
@@ -53,6 +54,7 @@ export default function Home() {
         isDarkMode ? 'bg-zinc-900' : 'bg-white'
       }`}
     >
+      <StructuredData />
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <HeroSection isDarkMode={isDarkMode} />

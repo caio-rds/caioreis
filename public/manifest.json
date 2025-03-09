@@ -1,0 +1,21 @@
+{
+  "name": "Caio Reis - Backend Developer",
+  "short_name": "Caio Reis",
+  "description": "Professional portfolio of Caio Reis, Backend Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#18181b",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

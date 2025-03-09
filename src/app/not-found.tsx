@@ -6,6 +6,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FiAlertCircle, FiArrowLeft, FiRefreshCw } from 'react-icons/fi';
 
+// Add metadata export for better SEO on 404 page
+export const metadata = {
+  title: 'Page Not Found',
+  description: 'The requested page could not be found.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function NotFound() {
   const { language, mounted } = useLanguage();
   const [isDarkMode, setIsDarkMode] = useState(false);
