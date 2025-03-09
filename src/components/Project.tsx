@@ -25,7 +25,7 @@ interface ProjectProps {
   index: number;
 }
 
-export default function Project({ project, isDarkMode, index }: ProjectProps) {
+export default function Project({ project, isDarkMode }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { language } = useLanguage();
 

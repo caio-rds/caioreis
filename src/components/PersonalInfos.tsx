@@ -241,7 +241,6 @@ function InfoCard({
   title,
   value,
   isDarkMode,
-  delay,
 }: {
   icon: React.ReactNode;
   title: string;

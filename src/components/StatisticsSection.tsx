@@ -137,9 +137,6 @@ export default function StatisticsSection({
             animate={{ opacity: 1, y: 0 }}
             whileHover={{
               scale: 1.05,
-              boxShadow: isDarkMode
-                ? '0 0 15px 2px rgba(52, 211, 153, 0.15)'
-                : '0 0 15px 2px rgba(5, 150, 105, 0.1)',
             }}
           >
             <div className="flex flex-col items-center text-center">
