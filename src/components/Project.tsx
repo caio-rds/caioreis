@@ -213,7 +213,7 @@ export default function Project({ project, isDarkMode, index }: ProjectProps) {
               isDarkMode ? 'text-zinc-500' : 'text-zinc-400'
             }`}
           >
-            // Description
+            {/* Description */}
           </span>
           {project.description[language as 'en' | 'pt']}
         </div>

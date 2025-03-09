@@ -15,8 +15,8 @@ import {
 } from 'react-icons/fi';
 
 function Header() {
-  const { theme, toggleTheme, mounted: themeMounted } = useTheme();
-  const { language, setLanguage, t, mounted: langMounted } = useLanguage();
+  const { toggleTheme, mounted: themeMounted } = useTheme();
+  const { language, setLanguage, mounted: langMounted } = useLanguage();
   const [showCursor, setShowCursor] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

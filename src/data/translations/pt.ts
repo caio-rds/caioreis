@@ -1,4 +1,4 @@
-export default {
+const portugueseTranslations = {
   header: {
     home: 'Início',
     about: 'Sobre',
@@ -68,3 +68,5 @@ export default {
     3: 'Taxa de Sucesso',
   },
 };
+
+export default portugueseTranslations;

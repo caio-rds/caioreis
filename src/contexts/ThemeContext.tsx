@@ -54,7 +54,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     return () => {
       window.removeEventListener('storage', handleStorageChange);
     };
-  }, []);
+  }, [theme]);
 
   const applyTheme = (newTheme: Theme) => {
     const scrollPosition = window.scrollY;

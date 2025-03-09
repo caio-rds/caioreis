@@ -1,4 +1,4 @@
-export default {
+const englishTranslations = {
   header: {
     home: 'Home',
     about: 'About',
@@ -68,3 +68,5 @@ export default {
     3: 'Success Rate',
   },
 };
+
+export default englishTranslations;

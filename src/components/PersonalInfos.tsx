@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useState, useEffect, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FiUser, FiCalendar, FiMapPin, FiBookOpen } from 'react-icons/fi';
 
@@ -53,21 +53,24 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
   const age = calculateAge(personalInfo.birthdate);
   const currentSemester = calculateSemester(personalInfo.education.startDate);
 
-  const terminalLines = [
-    '> whoami',
-    `${personalInfo.name}`,
-    '> get user.info',
-    `{`,
-    `  name: "${personalInfo.name}",`,
-    `  age: ${age},`,
-    `  location: "${personalInfo.location}"`,
-    `}`,
-    '> get user.education',
-    `{`,
-    `  course: "${personalInfo.education.course[language as 'en' | 'pt']}",`,
-    `  semester: ${currentSemester}`,
-    `}`,
-  ];
+  const terminalLines = useMemo(
+    () => [
+      '> whoami',
+      `${personalInfo.name}`,
+      '> get user.info',
+      `{`,
+      `  name: "${personalInfo.name}",`,
+      `  age: ${age},`,
+      `  location: "${personalInfo.location}"`,
+      `}`,
+      '> get user.education',
+      `{`,
+      `  course: "${personalInfo.education.course[language as 'en' | 'pt']}",`,
+      `  semester: ${currentSemester}`,
+      `}`,
+    ],
+    [age, currentSemester, language],
+  );
 
   useEffect(() => {
     if (currentLineIndex < terminalLines.length) {

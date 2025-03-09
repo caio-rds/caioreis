@@ -25,7 +25,6 @@ interface GitHubRepo {
 export default function Projects({ isDarkMode }: ProjectsProps) {
   const { language } = useLanguage();
   const [filter, setFilter] = useState<string | null>(null);
-  const [typing, setTyping] = useState(true);
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -146,7 +145,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
                   duration: 0.8,
                   repeatType: 'reverse',
                 }}
-                style={{ display: typing || loading ? 'block' : 'none' }}
+                style={{ display: true || loading ? 'block' : 'none' }}
               />
             </div>
 
@@ -161,8 +160,9 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
                 `// Error: ${error}`
               ) : (
                 <>
-                  // Found {filteredRepos.length} repositories{' '}
-                  {filter && `with language ${filter}`}
+                  {`// Found ${filteredRepos.length} repositories ${
+                    filter ? `with language ${filter}` : ''
+                  }`}
                 </>
               )}
             </div>

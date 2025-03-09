@@ -14,7 +14,7 @@ import {
 import { personalInfo } from '@/components/PersonalInfos';
 
 const Footer: React.FC = () => {
-  const { language, t, mounted: langMounted } = useLanguage();
+  const { language, mounted: langMounted } = useLanguage();
   const { mounted: themeMounted } = useTheme();
   const year = new Date().getFullYear();
   const [isDarkMode, setIsDarkMode] = useState(false);

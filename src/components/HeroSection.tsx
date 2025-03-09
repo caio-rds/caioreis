@@ -222,7 +222,7 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
               isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
             }`}
           >
-            //
+            {'//'}
           </span>
           {t('home.subtitle')}
         </motion.p>

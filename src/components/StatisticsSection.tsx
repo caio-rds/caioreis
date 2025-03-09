@@ -221,7 +221,7 @@ export default function StatisticsSection({
                     isDarkMode ? 'text-zinc-500' : 'text-zinc-400'
                   }`}
                 >
-                  //
+                  {/* // */}
                 </motion.span>
                 <p
                   className={`font-mono text-sm ${

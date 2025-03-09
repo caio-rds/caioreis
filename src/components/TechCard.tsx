@@ -6,7 +6,6 @@ import { SiNodedotjs, SiPython, SiGo, SiDocker, SiReact } from 'react-icons/si';
 import { BiData } from 'react-icons/bi';
 import { VscTerminalBash } from 'react-icons/vsc';
 import { TbBuildingBank, TbTestPipe } from 'react-icons/tb';
-import { SkillData } from '@/data/skillsData';
 
 interface TechCardProps {
   id: string;
@@ -46,7 +45,6 @@ export default function TechCard({
   const progressControls = useAnimation();
 
   useEffect(() => {
-    let start = 0;
     const end = percentage;
     const duration = 1500;
     const startTime = Date.now();
