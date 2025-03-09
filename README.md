@@ -1,3 +1,40 @@
+# Caio Reis - Portfolio Website
+
+![Portfolio Preview](public/images/site-preview.png)
+
+A modern, responsive developer portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## 🇺🇸 English
+
+### Overview
+
+This portfolio website showcases my skills, projects, and professional experience as a Backend Developer. It features a dark/light theme toggle, language switching (English/Portuguese), smooth animations, and dynamic GitHub project integration.
+
+### Technologies
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment**: [Vercel](https://vercel.com/)
+- **Analytics**: Vercel Analytics
+- **SEO**: Next.js Metadata API
+
+### Features
+
+- 🌓 Dark/Light Theme (automatically detects system preference)
+- 🌐 Multilingual support (English/Portuguese)
+- 📱 Fully responsive design
+- ⚡ Optimized performance with Next.js
+- 🔄 Dynamic GitHub repository integration
+- 🎬 Smooth page transitions and animations
+- 🧩 Terminal-inspired UI components
+- 📊 Dynamic statistics visualizations
+- 🤖 Structured data for improved SEO
+
+### Project Structure
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
