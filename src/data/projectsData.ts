@@ -42,7 +42,6 @@ export const projects: Project[] = [
     },
     featured: true,
   },
-  // Adicione mais projetos conforme necessário
 ];
 
 export const projectsLabels = {

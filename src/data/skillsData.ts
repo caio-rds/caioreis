@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  level: number; // 1-5 ou 1-100 dependendo da escala
+  level: number;
   category: 'frontend' | 'backend' | 'tools' | 'languages' | 'other';
   icon?: string;
 }
@@ -9,7 +9,7 @@ export interface SkillData {
   id: string;
   color: string;
   darkColor: string;
-  percentage: number; // New percentage property
+  percentage: number;
 }
 
 const skillsData: SkillData[] = [

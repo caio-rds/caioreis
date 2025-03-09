@@ -45,11 +45,10 @@ export default function TechCard({
   const [displayPercentage, setDisplayPercentage] = useState(0);
   const progressControls = useAnimation();
 
-  // Animate the percentage counter
   useEffect(() => {
     let start = 0;
     const end = percentage;
-    const duration = 1500; // Animation duration
+    const duration = 1500;
     const startTime = Date.now();
 
     const animatePercentage = () => {
@@ -57,7 +56,6 @@ export default function TechCard({
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      // Use easeOut function for smoother ending
       const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
       const currentValue = Math.round(easeOut(progress) * end);
 
@@ -68,7 +66,6 @@ export default function TechCard({
       }
     };
 
-    // Start animation after a delay based on index
     const timer = setTimeout(() => {
       requestAnimationFrame(animatePercentage);
       progressControls.start({
@@ -100,13 +97,10 @@ export default function TechCard({
     },
   };
 
-  // Extract colors for smoother transitions
   const lightColorValue = color.replace('from-', 'text-').split(' ')[0];
   const darkColorValue = darkColor.replace('from-', 'text-').split(' ')[0];
 
-  // Get the actual hex color value for the current mode
   const getHexColor = () => {
-    // These are approximate hex values matching Tailwind's color classes
     const colorMap: Record<string, string> = {
       'text-green-500': '#10b981',
       'text-green-400': '#34d399',

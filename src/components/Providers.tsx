@@ -6,15 +6,12 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Script to prevent flash of incorrect theme and ensure theme changes propagate
 const ThemeInitializer = () => {
   const [themeLoaded, setThemeLoaded] = useState(false);
 
   useEffect(() => {
-    // This script runs on the client-side after hydration
     const applyStoredTheme = () => {
       try {
-        // Ensure smooth transitions by adding a class to the HTML element
         document.documentElement.classList.add('theme-transition');
 
         const storedTheme = localStorage.getItem('theme');
@@ -28,7 +25,6 @@ const ThemeInitializer = () => {
           document.documentElement.classList.remove('dark');
         }
 
-        // Create a custom event that components can listen for
         window.dispatchEvent(
           new CustomEvent('themechange', {
             detail: {
@@ -46,7 +42,6 @@ const ThemeInitializer = () => {
 
     applyStoredTheme();
 
-    // Set up a mutation observer to dispatch events when the theme changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (
