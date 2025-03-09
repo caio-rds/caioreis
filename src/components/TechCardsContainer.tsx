@@ -34,7 +34,6 @@ export default function TechCardsContainer({
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.25 }}
       >
         {t('tech.title') || 'My Tech Stack'}
       </motion.h3>

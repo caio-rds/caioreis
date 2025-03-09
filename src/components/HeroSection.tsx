@@ -36,7 +36,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
       style={{ [side]: '-30px' }}
       initial={{ opacity: 0, x: side === 'left' ? -20 : 20 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.8, duration: 0.5 }}
     >
       <div
         className={`h-40 text-6xl font-mono font-bold ${
@@ -53,7 +52,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
       className="text-center py-16 md:py-24 px-4 md:px-8 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 opacity-5">
@@ -69,8 +67,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
                 y: ['0%', '100%'],
               }}
               transition={{
-                duration: Math.random() * 5 + 5,
-                delay: Math.random() * 2,
                 repeat: Infinity,
                 repeatType: 'loop',
                 ease: 'linear',
@@ -94,7 +90,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
           className="mb-6 relative z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
         >
           <motion.h1
             className={`text-4xl md:text-6xl font-bold relative text-transparent bg-clip-text bg-gradient-to-r inline-block ${
@@ -133,7 +128,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
             className="h-px w-3/4 mx-auto my-2"
             initial={{ width: 0 }}
             animate={{ width: '75%' }}
-            transition={{ delay: 1.6, duration: 0.8 }}
             style={{
               background: isDarkMode
                 ? 'linear-gradient(to right, transparent, rgba(129, 140, 248, 0.4), transparent)'
@@ -148,7 +142,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
           }`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.5 }}
         >
           <span className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}>
             {'{{'}
@@ -165,7 +158,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
           }`}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 2.0, duration: 0.5 }}
         >
           <div
             className={`flex items-center px-4 py-2 ${
@@ -195,7 +187,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
               }}
               initial="hidden"
               animate={codeControls}
-              transition={{ duration: 0.8 }}
             >
               {codeLines.map((line, index) => (
                 <CodeLine
@@ -215,7 +206,6 @@ export default function HeroSection({ isDarkMode }: HeroSectionProps) {
           }`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
         >
           <span
             className={`font-mono ${
@@ -263,7 +253,6 @@ function TypewriterText({
       {displayText.length < text.length && (
         <motion.span
           animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
           className={isDarkMode ? 'text-zinc-100' : 'text-zinc-800'}
         >
           |
@@ -315,7 +304,6 @@ function CodeLine({
       } whitespace-pre`}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 * index + 2.2, duration: 0.3 }}
     >
       <span
         className={`mr-4 inline-block w-5 text-right ${

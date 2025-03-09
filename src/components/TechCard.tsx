@@ -68,7 +68,7 @@ export default function TechCard({
       requestAnimationFrame(animatePercentage);
       progressControls.start({
         width: `${percentage}%`,
-        transition: { duration: 1.5, ease: 'easeOut' },
+        transition: { ease: 'easeOut' },
       });
     }, 500 + index * 100);
 
@@ -80,7 +80,7 @@ export default function TechCard({
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: 'spring', stiffness: 100, duration: 0.25 },
+      transition: { type: 'spring', stiffness: 100 },
     },
   };
 
@@ -88,10 +88,6 @@ export default function TechCard({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        delay: 0.1 + index * 0.05,
-        duration: 0.25,
-      },
     },
   };
 
@@ -125,16 +121,15 @@ export default function TechCard({
         isDarkMode
           ? `border-zinc-700 bg-zinc-900 bg-opacity-60`
           : `border-zinc-200 bg-white`
-      } shadow-lg backdrop-blur-sm transition-all duration-250`}
+      } shadow-lg backdrop-blur-sm`}
       variants={cardVariants}
       whileHover={{
         scale: 1.02,
         boxShadow: isDarkMode
           ? `0 0 15px 2px ${darkColor.split(' ')[1].replace('to-', '')}40`
           : `0 0 15px 2px ${color.split(' ')[1].replace('to-', '')}20`,
-        transition: { duration: 0.25 },
       }}
-      whileTap={{ scale: 0.98, transition: { duration: 0.15 } }}
+      whileTap={{ scale: 0.98 }}
     >
       {/* Card header */}
       <div className="flex justify-between items-start mb-4">
@@ -145,7 +140,7 @@ export default function TechCard({
         >
           {/* Use inline style with transition instead of classes for icon color */}
           <span
-            className="text-xl transition-colors duration-250"
+            className="text-xl transition-colors"
             style={{ color: getHexColor() }}
           >
             {iconComponents[id] || '⚡'}
@@ -207,7 +202,6 @@ export default function TechCard({
             } leading-relaxed`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 + 0.05 * index, duration: 0.25 }}
           >
             {description}
           </motion.p>

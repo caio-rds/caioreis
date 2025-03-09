@@ -76,11 +76,9 @@ export default function Providers({
     <ThemeProvider>
       <LanguageProvider>
         <ThemeInitializer />
-        <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-900 transition-colors duration-250">
+        <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-900 transition-colors ">
           <Header />
-          <main className="flex-grow transition-colors duration-250">
-            {children}
-          </main>
+          <main className="flex-grow transition-colors ">{children}</main>
           <Footer />
         </div>
       </LanguageProvider>

@@ -77,7 +77,6 @@ export default function StatisticsSection({
       }`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
     >
       {/* Background grid decoration */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -115,7 +114,6 @@ export default function StatisticsSection({
           }`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
         >
           <span
             className={isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}
@@ -130,14 +128,13 @@ export default function StatisticsSection({
         {statisticsData.map((stat, index) => (
           <motion.div
             key={index}
-            className={`p-6 rounded-lg border backdrop-blur-sm transition-all duration-250 ${
+            className={`p-6 rounded-lg border backdrop-blur-sm transition-all ${
               isDarkMode
                 ? 'border-zinc-700 bg-zinc-900/20 hover:bg-zinc-900/40'
                 : 'border-zinc-200 bg-white/60 hover:bg-white/80'
             }`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 * index, duration: 0.5 }}
             whileHover={{
               scale: 1.05,
               boxShadow: isDarkMode
@@ -159,7 +156,6 @@ export default function StatisticsSection({
                     opacity: [0.8, 1, 0.8],
                   }}
                   transition={{
-                    duration: 3,
                     repeat: Infinity,
                     repeatType: 'reverse',
                   }}
@@ -184,7 +180,6 @@ export default function StatisticsSection({
                   animate={{
                     backgroundPosition: ['0%', '100%'],
                     transition: {
-                      duration: 4,
                       repeat: Infinity,
                       repeatType: 'mirror',
                     },
@@ -205,7 +200,6 @@ export default function StatisticsSection({
                   animate={{
                     opacity: [0, 1, 0],
                     transition: {
-                      duration: 1.5,
                       repeat: Infinity,
                     },
                   }}
@@ -247,7 +241,6 @@ export default function StatisticsSection({
                     x: ['-100%', '0%', '0%', '100%'],
                   }}
                   transition={{
-                    duration: 4,
                     repeat: Infinity,
                     repeatType: 'loop',
                     times: [0, 0.3, 0.7, 1],

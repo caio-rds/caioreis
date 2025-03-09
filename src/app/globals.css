@@ -8,7 +8,8 @@
   --secondary: #2563eb; /* blue-600 */
   --accent: #8b5cf6; /* violet-500 */
   --border: #e4e4e7; /* zinc-200 */
-  --transition-duration: 250ms; /* faster transitions - reduced from 600ms */
+  --transition-duration: 250ms; /* consistent transitions */
+  --hover-transition-duration: 150ms; /* faster hover transitions */
 }
 
 .dark {
@@ -25,18 +26,22 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans, Arial, sans-serif);
-  /* Add transition for body */
   transition: background-color var(--transition-duration) ease,
     color var(--transition-duration) ease;
 }
 
-/* Enhanced smooth transitions - longer duration and easing */
+/* Standardized transitions for all elements */
 * {
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
     backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: var(--transition-duration);
+}
+
+/* Faster transitions for hover states */
+*:hover {
+  transition-duration: var(--hover-transition-duration);
 }
 
 /* For theme toggle, improve the transition */

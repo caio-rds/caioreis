@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div
-      className={`w-full min-h-screen px-4 py-12 transition-colors duration-300 ${
+      className={`w-full min-h-screen px-4 py-12 ${
         isDarkMode ? 'bg-zinc-900' : 'bg-white'
       }`}
     >

@@ -126,7 +126,7 @@ export default function Project({ project, isDarkMode, index }: ProjectProps) {
 
   return (
     <motion.div
-      className={`rounded-lg border overflow-hidden transition-all duration-250 ${
+      className={`rounded-lg border overflow-hidden ${
         isDarkMode
           ? `border-zinc-700 bg-zinc-900/80 ${
               project.featured ? 'ring-1 ring-emerald-500/30' : ''
@@ -137,7 +137,6 @@ export default function Project({ project, isDarkMode, index }: ProjectProps) {
       }`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 * index, duration: 0.4 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{
@@ -308,7 +307,6 @@ export default function Project({ project, isDarkMode, index }: ProjectProps) {
         className="h-1 w-full"
         initial={{ scaleX: 0 }}
         animate={isHovered ? { scaleX: 1 } : { scaleX: 0 }}
-        transition={{ duration: 0.4 }}
         style={{
           originX: 0,
           background: `linear-gradient(to right, ${

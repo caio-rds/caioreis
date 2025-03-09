@@ -53,7 +53,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-colors duration-300">
+      <body className="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-colors">
         <Providers>{children}</Providers>
       </body>
     </html>

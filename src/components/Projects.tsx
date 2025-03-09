@@ -95,7 +95,6 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
           } border ${isDarkMode ? 'border-zinc-700' : 'border-zinc-200'}`}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4 }}
         >
           {/* Terminal header */}
           <div
@@ -142,7 +141,6 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
                 animate={{ opacity: [0, 1] }}
                 transition={{
                   repeat: Infinity,
-                  duration: 0.8,
                   repeatType: 'reverse',
                 }}
                 style={{ display: true || loading ? 'block' : 'none' }}
@@ -189,7 +187,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
 
             <motion.button
               onClick={() => setFilter(null)}
-              className={`px-3 py-1 text-xs font-mono rounded-md transition-colors ${
+              className={`px-3 py-1 text-xs font-mono rounded-md ${
                 filter === null
                   ? isDarkMode
                     ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
@@ -208,7 +206,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
               <motion.button
                 key={lang}
                 onClick={() => setFilter(lang)}
-                className={`px-3 py-1 text-xs font-mono rounded-md transition-colors ${
+                className={`px-3 py-1 text-xs font-mono rounded-md ${
                   filter === lang
                     ? isDarkMode
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
@@ -232,7 +230,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
         <div className="flex justify-center items-center py-20">
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            transition={{ repeat: Infinity, ease: 'linear' }}
             className={isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}
           >
             <FiLoader size={40} />

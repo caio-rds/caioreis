@@ -111,15 +111,11 @@ function Header() {
     closed: {
       opacity: 0,
       y: -10,
-      transition: {
-        duration: 0.2,
-      },
     },
     open: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
         staggerChildren: 0.07,
         delayChildren: 0.1,
       },
@@ -149,18 +145,17 @@ function Header() {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 py-3 px-4 md:px-6 flex justify-between items-center border-b backdrop-blur-md transition-all duration-250 ${
+      className={`sticky top-0 z-50 py-3 px-4 md:px-6 flex justify-between items-center border-b backdrop-blur-md ${
         isDarkMode
           ? 'bg-zinc-900/90 border-zinc-800/70'
           : 'bg-white/90 border-zinc-200/70'
       }`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
     >
       <div className="flex items-center">
         <motion.div
-          className={`px-3 py-2 rounded-md transition-all duration-250 ${
+          className={`px-3 py-2 rounded-md ${
             isDarkMode
               ? 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700'
               : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -169,7 +164,7 @@ function Header() {
         >
           <div className="flex items-center">
             <FiTerminal
-              className={`mr-2 transition-colors duration-250 ${
+              className={`mr-2 transition-colors ${
                 isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
               }`}
             />
@@ -208,7 +203,7 @@ function Header() {
 
       <div className="hidden md:flex items-center space-x-3">
         <motion.button
-          className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-250 ${
+          className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all ${
             isDarkMode
               ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
               : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -226,7 +221,7 @@ function Header() {
 
         <motion.button
           onClick={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
-          className={`px-3 py-2 rounded-md text-sm font-mono font-medium transition-all duration-250 ${
+          className={`px-3 py-2 rounded-md text-sm font-mono font-medium transition-all ${
             isDarkMode
               ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
               : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -239,7 +234,7 @@ function Header() {
 
         <motion.button
           onClick={toggleTheme}
-          className={`p-2 rounded-md transition-all duration-250 ${
+          className={`p-2 rounded-md transition-all ${
             isDarkMode
               ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
               : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -255,7 +250,6 @@ function Header() {
               fill="currentColor"
               initial={{ rotate: -45 }}
               animate={{ rotate: 0 }}
-              transition={{ duration: 0.5 }}
             >
               <path
                 fillRule="evenodd"
@@ -271,7 +265,6 @@ function Header() {
               fill="currentColor"
               initial={{ rotate: 45 }}
               animate={{ rotate: 0 }}
-              transition={{ duration: 0.5 }}
             >
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </motion.svg>
@@ -320,7 +313,7 @@ function Header() {
             <div className="flex flex-col space-y-3">
               {/* CV Download Button */}
               <motion.button
-                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-medium transition-all duration-250 ${
+                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-medium transition-all ${
                   isDarkMode
                     ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                     : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -347,7 +340,7 @@ function Header() {
                   setLanguage(language === 'pt' ? 'en' : 'pt');
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-mono font-medium transition-all duration-250 ${
+                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-mono font-medium transition-all ${
                   isDarkMode
                     ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                     : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -367,7 +360,7 @@ function Header() {
                   toggleTheme();
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-medium transition-all duration-250 ${
+                className={`flex items-center justify-center px-4 py-3 rounded-md text-sm font-medium transition-all ${
                   isDarkMode
                     ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                     : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'

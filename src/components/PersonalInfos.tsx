@@ -93,7 +93,6 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
       className="my-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
     >
       <motion.h3
         className={`text-2xl md:text-3xl font-bold text-center mb-12 ${
@@ -101,7 +100,6 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
       >
         {language === 'en' ? 'About Me' : 'Sobre Mim'}
       </motion.h3>
@@ -116,7 +114,6 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
           }`}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
         >
           {/* Terminal header */}
           <div
@@ -160,7 +157,6 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
                 }`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
               >
                 {line.startsWith('  ') &&
                 !line.includes('{') &&
@@ -193,7 +189,6 @@ export default function PersonalInfos({ isDarkMode }: PersonalInfosProps) {
                 animate={{ opacity: [0, 1] }}
                 transition={{
                   repeat: Infinity,
-                  duration: 0.8,
                   repeatType: 'reverse',
                 }}
               />
@@ -256,14 +251,13 @@ function InfoCard({
 }) {
   return (
     <motion.div
-      className={`p-4 rounded-lg border transition-all duration-250 ${
+      className={`p-4 rounded-lg border ${
         isDarkMode
           ? 'border-zinc-700 bg-zinc-800/60 hover:bg-zinc-800'
           : 'border-zinc-200 bg-zinc-50 hover:bg-white'
       }`}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.4 }}
       whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-center mb-2">

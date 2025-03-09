@@ -82,7 +82,7 @@ export default function NotFound() {
 
   return (
     <div
-      className={`w-full min-h-screen px-4 py-12 flex items-center justify-center transition-colors duration-300 ${
+      className={`w-full min-h-screen px-4 py-12 flex items-center justify-center ${
         isDarkMode ? 'bg-zinc-900' : 'bg-white'
       }`}
     >
@@ -92,7 +92,6 @@ export default function NotFound() {
           className="text-center mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
           <h1
             className={`text-7xl md:text-9xl font-mono font-bold bg-gradient-to-r text-transparent bg-clip-text ${
@@ -126,7 +125,6 @@ export default function NotFound() {
           }`}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Terminal header */}
           <div
@@ -189,7 +187,6 @@ export default function NotFound() {
                 }
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
               >
                 {line.startsWith('  ') &&
                 !line.includes('{') &&
@@ -221,7 +218,6 @@ export default function NotFound() {
                 animate={{ opacity: [0, 1] }}
                 transition={{
                   repeat: Infinity,
-                  duration: 0.8,
                   repeatType: 'reverse',
                 }}
               />
@@ -236,11 +232,10 @@ export default function NotFound() {
               className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
             >
               <Link href="/" passHref>
                 <motion.button
-                  className={`flex items-center px-6 py-3 rounded-md text-sm font-medium transition-all duration-250 ${
+                  className={`flex items-center px-6 py-3 rounded-md text-sm font-medium transition-all ${
                     isDarkMode
                       ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                       : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -258,7 +253,7 @@ export default function NotFound() {
               </Link>
 
               <motion.button
-                className={`flex items-center px-6 py-3 rounded-md text-sm font-medium transition-all duration-250 ${
+                className={`flex items-center px-6 py-3 rounded-md text-sm font-medium transition-all ${
                   isDarkMode
                     ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                     : 'bg-zinc-100 text-zinc-800 hover:bg-zinc-200'
@@ -293,7 +288,6 @@ export default function NotFound() {
                 y: ['0%', `${Math.random() * 100}%`],
               }}
               transition={{
-                duration: Math.random() * 10 + 10,
                 delay: Math.random() * 5,
                 repeat: Infinity,
                 repeatType: 'loop',

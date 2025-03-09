@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
               isDarkMode
                 ? 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                 : 'bg-white text-zinc-800 hover:bg-zinc-100'
-            } transition-all duration-250`}
+            }`}
             whileHover={{
               scale: 1.1,
               boxShadow: isDarkMode
@@ -100,14 +100,13 @@ const Footer: React.FC = () => {
       </AnimatePresence>
 
       <motion.footer
-        className={`py-8 px-6 border-t transition-all duration-300 ${
+        className={`py-8 px-6 border-t ${
           isDarkMode
             ? 'border-zinc-800 bg-zinc-900/90 backdrop-blur-md'
             : 'border-zinc-200 bg-white/90 backdrop-blur-md'
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 flex flex-col md:flex-row justify-between items-center">
@@ -129,7 +128,6 @@ const Footer: React.FC = () => {
                 animate={{ opacity: [0, 1] }}
                 transition={{
                   repeat: Infinity,
-                  duration: 1,
                   repeatType: 'reverse',
                 }}
                 className={`ml-1 inline-block w-2 h-4 ${
@@ -192,7 +190,7 @@ const Footer: React.FC = () => {
                 isDarkMode
                   ? 'bg-zinc-800 text-zinc-300 hover:text-emerald-400'
                   : 'bg-zinc-100 text-zinc-700 hover:text-emerald-600'
-              } transition-colors duration-300`}
+              }`}
             >
               <FiGithub size={20} />
             </motion.a>
@@ -211,7 +209,7 @@ const Footer: React.FC = () => {
                 isDarkMode
                   ? 'bg-zinc-800 text-zinc-300 hover:text-emerald-400'
                   : 'bg-zinc-100 text-zinc-700 hover:text-emerald-600'
-              } transition-colors duration-300`}
+              }`}
             >
               <FiLinkedin size={20} />
             </motion.a>
@@ -221,7 +219,6 @@ const Footer: React.FC = () => {
             className="font-mono text-center text-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
           >
             <div
               className={`inline-block px-4 py-2 rounded-lg ${
