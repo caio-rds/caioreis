@@ -1,0 +1,165 @@
+@import 'tailwindcss';
+
+:root {
+  --foreground: #1c1917;
+  --background: #fafaf9;
+  --background-component: #ffffff;
+  --primary: #059669;
+  --secondary: #4f46e5;
+  --accent: #d946ef;
+  --border: #e7e5e4;
+  --grid-color: rgba(0, 0, 0, 0.03);
+  --transition-duration: 300ms;
+}
+
+.dark {
+  --foreground: #f5f5f4;
+  --background: #09090b;
+  --background-component: #18181b;
+  --primary: #10b981;
+  --secondary: #6366f1;
+  --accent: #f0abfc;
+  --border: #27272a;
+  --grid-color: rgba(255, 255, 255, 0.02);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Outfit', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  transition:
+    background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background grid pattern */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Custom code typography styles */
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Neon glow card styles */
+.neon-glow-primary {
+  transition: all 0.3s ease;
+}
+.neon-glow-primary:hover {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.neon-glow-secondary {
+  transition: all 0.3s ease;
+}
+.neon-glow-secondary:hover {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.neon-glow-accent {
+  transition: all 0.3s ease;
+}
+.neon-glow-accent:hover {
+  box-shadow: 0 0 25px -5px rgba(217, 70, 239, 0.25);
+  border-color: rgba(217, 70, 239, 0.4);
+}
+
+/* Glitch animation for terminal sudo rm -rf */
+@keyframes glitch {
+  0% {
+    text-shadow: 1px 1px 0px #ff00c1, -1px -1px 0px #00fff0;
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    text-shadow: -2px 1px 0px #ff00c1, 2px -1px 0px #00fff0;
+  }
+  20% {
+    text-shadow: 1px -1px 0px #ff00c1, -1px 1px 0px #00fff0;
+    transform: translate(1px, -1px);
+  }
+  30% {
+    text-shadow: 0px 0px 0px #ff00c1, 0px 0px 0px #00fff0;
+    transform: translate(0, 0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s linear infinite;
+}
+
+@keyframes terminal-glitch-bg {
+  0% {
+    background-color: #09090b;
+  }
+  5% {
+    background-color: #7f1d1d;
+  }
+  10% {
+    background-color: #09090b;
+  }
+  15% {
+    background-color: #1e3a8a;
+  }
+  20% {
+    background-color: #09090b;
+  }
+  100% {
+    background-color: #09090b;
+  }
+}
+
+.terminal-glitch {
+  animation: terminal-glitch-bg 0.5s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Custom utilities */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glassmorphism {
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

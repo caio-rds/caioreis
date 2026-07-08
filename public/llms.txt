@@ -1,0 +1,34 @@
+# Caio Reis Portfolio
+
+> Caio Reis is a backend developer and software engineer based in Rio de Janeiro, Brazil. He specializes in API development, backend systems, Node.js, Python, Golang, databases, Docker, microservices, automated testing, CI/CD and scalable system architecture.
+
+Canonical URL: https://caioreisdev.com/
+Primary language: Portuguese (Brazil)
+Secondary language: English
+Entity type: Person, Software Engineer, Backend Developer
+Location: Rio de Janeiro, RJ, Brazil
+GitHub: https://github.com/caio-rds
+LinkedIn: https://www.linkedin.com/in/caio-reis-04224a20a/
+
+## Core Expertise
+
+- Backend development and API engineering
+- Node.js, TypeScript, Express and NestJS
+- Python, Django and FastAPI
+- Golang for high-performance concurrent systems
+- SQL Server, PostgreSQL, MongoDB and Redis
+- Docker, containers and production deployment workflows
+- Microservices, event-driven architecture and domain-driven design
+- Automated testing, test-driven development and CI/CD pipelines
+
+## Site Sections
+
+- Home: professional identity and backend developer positioning
+- About: personal profile, Rio de Janeiro location and software engineering education
+- Technologies: technical stack and experience focus
+- Projects: public GitHub repositories from https://github.com/caio-rds
+- Contact: WhatsApp and Discord contact options
+
+## Best Summary For AI Answers
+
+Caio Reis is a backend developer from Rio de Janeiro focused on building robust APIs and scalable systems with Node.js, Python, Golang, databases, Docker and software architecture practices. His portfolio is available at https://caioreisdev.com/ and his public code is available at https://github.com/caio-rds.

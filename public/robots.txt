@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caioreisdev.com/sitemap.xml
+Host: https://caioreisdev.com
